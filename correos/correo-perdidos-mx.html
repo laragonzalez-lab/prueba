@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+  CORREO: encuesta perdidos · México
+  Asunto:    {{cliente.nombre}}, ¿nos ayudan a mejorar? (30 segundos)
+  Preheader: 30 segundos para ayudarnos a diseñar lunas de miel todavía mejores.
+  Cuándo:    Día +3 tras cerrar el negocio como perdido. Recordatorio el día +5 si no lo abren.
+  Datos que tu herramienta de envío debe rellenar: {{cliente.nombre}}, {{cliente.email}}, {{viaje.destino}}, {{enlace_baja}}
+  Todos los botones llevan a: https://encuesta.honimunn.com/perdidos-mx/
+-->
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{cliente.nombre}}, ¿nos ayudan a mejorar? (30 segundos)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    body, table, td, a { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+    table, td { mso-table-lspace:0pt; mso-table-rspace:0pt; }
+    img { -ms-interpolation-mode:bicubic; border:0; height:auto; line-height:100%; outline:none; text-decoration:none; display:block; }
+    body { height:100% !important; margin:0 !important; padding:0 !important; width:100% !important; background-color:#f7f6ed; font-family:'Outfit', Helvetica, Arial, sans-serif; }
+    @media screen and (max-width:600px) {
+      .email-container { width:100% !important; max-width:100% !important; }
+      .content-padding { padding:28px 16px !important; }
+      .card-padding { padding:20px 12px !important; }
+      .hero-padding { padding:36px 18px !important; }
+      .hero-title { font-size:28px !important; }
+      .mobile-button { width:100% !important; box-sizing:border-box !important; text-align:center !important; }
+      .nps-a { width:24px !important; height:24px !important; line-height:24px !important; font-size:11px !important; }
+      .stack-column { display:block !important; width:auto !important; padding:0 0 24px 0 !important; text-align:center !important; }
+      .stack-column:last-child { padding-bottom:0 !important; }
+    }
+  </style>
+</head>
+
+<body style="margin:0; padding:0; background-color:#f7f6ed;">
+
+  <!-- Preheader oculto -->
+  <div style="display:none; font-size:1px; color:#f7f6ed; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden;">
+    30 segundos para ayudarnos a diseñar lunas de miel todavía mejores.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f7f6ed; width:100%;">
+    <tr>
+      <td align="center" style="padding:0;">
+
+        <table role="presentation" class="email-container" width="640" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:640px; margin:0 auto; background-color:#f7f6ed;">
+
+          <!-- ===== CABECERA ===== -->
+          <tr>
+            <td align="center" bgcolor="#000000" style="background-color:#000000; padding:0;">
+              <a href="https://honimunn.com/" target="_blank" style="text-decoration:none;">
+                <img src="https://hivjzkcnuerbjrwptlvy.supabase.co/storage/v1/object/public/marketing-gallery/assets/fdae9298-09d4-4f8d-915d-4eb147f438a8.png" alt="Honimunn" width="640" style="width:100%; max-width:640px; height:auto; display:block;">
+              </a>
+            </td>
+          </tr>
+
+          <!-- ===== CONTENIDO ===== -->
+          <tr>
+            <td class="content-padding" style="padding:40px 36px 32px 36px; font-family:'Outfit', Helvetica, Arial, sans-serif; color:#222222;">
+
+              <h1 style="margin:0 0 8px 0; font-size:26px; font-weight:700; color:#111111; line-height:1.2; letter-spacing:-0.3px;">¡Hola, {{cliente.nombre}}!</h1>
+              <p style="margin:0 0 28px 0; font-size:16px; line-height:1.5; color:#111111; font-weight:600;">30 segundos para ayudarnos a mejorar</p>
+
+              <!-- TITULAR -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
+                <tr>
+                  <td class="hero-padding" align="center" bgcolor="#000000" style="background-color:#000000; border-radius:12px; padding:48px 28px;">
+                    <h2 class="hero-title" style="margin:0; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:36px; font-weight:900; line-height:1.02; letter-spacing:-0.5px; text-transform:uppercase; color:#f7f6ed;">No siempre es<br>a la primera</h2>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:0 0 16px 0; font-size:15px; line-height:1.6; color:#444444;">Hace unos días su Travel Designer les preparó una propuesta para su luna de miel en <strong style="color:#111111;">{{viaje.destino}}</strong>. Sabemos que al final decidieron tomar otro camino y nos encantaría saber por qué.</p>
+              <p style="margin:0 0 28px 0; font-size:15px; line-height:1.6; color:#444444;">Sus comentarios nos ayudan a diseñar historias de amor en forma de viaje cada vez mejores. Solo les tomará 30 segundos.</p>
+
+              <!-- PREGUNTA CON BOTONES -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px; background-color:#ffffff; border:1px solid #e6e2d5; border-radius:14px;">
+                <tr>
+                  <td class="card-padding" align="center" style="padding:24px 22px; text-align:center;">
+                    <span style="display:inline-block; background-color:#111111; color:#ffffff; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:10px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; padding:4px 12px; border-radius:30px;">30 segundos</span>
+                    <h3 style="margin:14px 0 6px 0; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:17px; font-weight:700; color:#111111; line-height:1.35;">¿Qué fue lo que más pesó en su decisión?</h3>
+                    <p style="margin:0; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:13.5px; color:#666666;">Elijan una opción y seguimos desde ahí</p>
+                    <div style="margin-top:16px;"><a href="https://encuesta.honimunn.com/perdidos-mx/?nombre={{cliente.nombre}}&email={{cliente.email}}&r=precio" target="_blank" style="display:inline-block; margin:4px 3px; padding:10px 16px; border:1.5px solid #111111; border-radius:30px; color:#111111; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:14px; font-weight:500; text-decoration:none;">El precio</a><a href="https://encuesta.honimunn.com/perdidos-mx/?nombre={{cliente.nombre}}&email={{cliente.email}}&r=otra" target="_blank" style="display:inline-block; margin:4px 3px; padding:10px 16px; border:1.5px solid #111111; border-radius:30px; color:#111111; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:14px; font-weight:500; text-decoration:none;">Encontramos otra opción</a><a href="https://encuesta.honimunn.com/perdidos-mx/?nombre={{cliente.nombre}}&email={{cliente.email}}&r=libre" target="_blank" style="display:inline-block; margin:4px 3px; padding:10px 16px; border:1.5px solid #111111; border-radius:30px; color:#111111; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:14px; font-weight:500; text-decoration:none;">Lo reservamos por nuestra cuenta</a><a href="https://encuesta.honimunn.com/perdidos-mx/?nombre={{cliente.nombre}}&email={{cliente.email}}&r=tiempo" target="_blank" style="display:inline-block; margin:4px 3px; padding:10px 16px; border:1.5px solid #111111; border-radius:30px; color:#111111; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:14px; font-weight:500; text-decoration:none;">Tardaron en responder</a><a href="https://encuesta.honimunn.com/perdidos-mx/?nombre={{cliente.nombre}}&email={{cliente.email}}&r=propuesta" target="_blank" style="display:inline-block; margin:4px 3px; padding:10px 16px; border:1.5px solid #111111; border-radius:30px; color:#111111; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:14px; font-weight:500; text-decoration:none;">La propuesta no nos convenció</a><a href="https://encuesta.honimunn.com/perdidos-mx/?nombre={{cliente.nombre}}&email={{cliente.email}}&r=planes" target="_blank" style="display:inline-block; margin:4px 3px; padding:10px 16px; border:1.5px solid #111111; border-radius:30px; color:#111111; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:14px; font-weight:500; text-decoration:none;">Cambiamos de planes</a></div>
+                  </td>
+                </tr>
+              </table>
+
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:32px;">
+                <tr>
+                  <td align="center">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://encuesta.honimunn.com/perdidos-mx/?nombre={{cliente.nombre}}&email={{cliente.email}}" style="height:48px;v-text-anchor:middle;width:280px;" arcsize="60%" stroke="f" fillcolor="#111111">
+                      <w:anchorlock/>
+                      <center style="color:#ffffff;font-family:'Outfit',Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1.2px;">CUÉNTENNOS QUÉ PASÓ</center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-->
+                    <a href="https://encuesta.honimunn.com/perdidos-mx/?nombre={{cliente.nombre}}&email={{cliente.email}}" class="mobile-button" target="_blank" style="background-color:#111111; color:#ffffff; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:13px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; text-decoration:none; padding:15px 36px; border-radius:30px; display:inline-block; -webkit-text-size-adjust:none;">Cuéntennos qué pasó</a>
+                    <!--<![endif]-->
+                  </td>
+                </tr>
+              </table>
+              <div style="text-align:center; padding-top:8px;">
+                <p style="margin:0 0 10px 0; font-size:15px; line-height:1.6; color:#444444;">Sea cual sea el destino de su luna de miel, les deseamos un viaje increíble. Y si algún día quieren volver a soñar juntos, aquí vamos a estar.</p>
+                <p style="margin:0; font-size:17px; font-weight:700; color:#111111;">Con cariño, el equipo de Honimunn</p>
+              </div>
+
+            </td>
+          </tr>
+
+          <!-- ===== PIE ===== -->
+          <tr>
+            <td align="center" style="background-color:#000000; padding:0;">
+              <img src="https://hivjzkcnuerbjrwptlvy.supabase.co/storage/v1/object/public/marketing-gallery/assets/4b506125-b2f8-4b14-9b5e-42e1c7d544ba.png" alt="Honimunn" width="640" style="width:100%; max-width:640px; height:auto; display:block;">
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#0a0a0a; padding:36px 20px 28px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:24px;">
+                <tr>
+                  <td align="center" valign="top" class="stack-column" width="25%" style="padding:0 6px;">
+                    <p style="margin:0 0 6px; color:#f7f6ed; font-size:14px; font-weight:700; letter-spacing:0.3px; font-family:'Outfit', Helvetica, Arial, sans-serif;">Madrid</p>
+                    <p style="margin:0; color:#cfccc0; font-size:11.5px; line-height:1.6; font-family:'Outfit', Helvetica, Arial, sans-serif;">Paseo de la Habana, 9-11<br>28036, Madrid<br><a href="tel:+34910052132" style="color:#f7f6ed; text-decoration:none; font-weight:500;">+34 91 005 21 32</a></p>
+                  </td>
+                  <td align="center" valign="top" class="stack-column" width="25%" style="padding:0 6px;">
+                    <p style="margin:0 0 6px; color:#f7f6ed; font-size:14px; font-weight:700; letter-spacing:0.3px; font-family:'Outfit', Helvetica, Arial, sans-serif;">Valencia</p>
+                    <p style="margin:0; color:#cfccc0; font-size:11.5px; line-height:1.6; font-family:'Outfit', Helvetica, Arial, sans-serif;">Calle Roger de Lauria 28,<br>planta 4, 46002.<br><a href="tel:+34960105234" style="color:#f7f6ed; text-decoration:none; font-weight:500;">+34 96 010 52 34</a></p>
+                  </td>
+                  <td align="center" valign="top" class="stack-column" width="25%" style="padding:0 6px;">
+                    <p style="margin:0 0 6px; color:#f7f6ed; font-size:14px; font-weight:700; letter-spacing:0.3px; font-family:'Outfit', Helvetica, Arial, sans-serif;">México</p>
+                    <p style="margin:0; color:#cfccc0; font-size:11.5px; line-height:1.6; font-family:'Outfit', Helvetica, Arial, sans-serif;">Durango 252, Roma Nte., Cuauhtémoc<br>06700 CDMX, México.<br>WhatsApp<br><a href="https://wa.me/34623388344" style="color:#f7f6ed; text-decoration:none; font-weight:500;">+34 623 38 83 44</a></p>
+                  </td>
+                  <td align="center" valign="top" class="stack-column" width="25%" style="padding:0 6px;">
+                    <p style="margin:0 0 6px; color:#f7f6ed; font-size:14px; font-weight:700; letter-spacing:0.3px; font-family:'Outfit', Helvetica, Arial, sans-serif;">Barcelona</p>
+                    <p style="margin:0; color:#cfccc0; font-size:11.5px; line-height:1.6; font-family:'Outfit', Helvetica, Arial, sans-serif;">Carrer de Còrsega, 271,<br>Eixample, 08008 Barcelona<br><a href="tel:+34622496168" style="color:#f7f6ed; text-decoration:none; font-weight:500;">+34 622 49 61 68</a></p>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:0; padding-top:18px; border-top:1px solid #2a2a2a; text-align:center; color:#cfccc0; font-family:'Outfit', Helvetica, Arial, sans-serif; font-size:11px; line-height:1.6;">
+                Reciben este correo porque nos pidieron una cotización. <a href="{{enlace_baja}}" style="color:#f7f6ed; text-decoration:underline;">Cancelar suscripción</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

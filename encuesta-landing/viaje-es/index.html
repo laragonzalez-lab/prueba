@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Encuesta Honimunn</title>
+<!-- Encuesta vuelta de viaje · España -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&family=Playfair+Display:wght@900&display=swap">
+<style>
+/* Landing de la encuesta: una columna de 600px con los colores de la newsletter (crema, negro, grises y tarjeta blanca). Un solo look claro, a propósito. */
+:root{
+  --crema:#f7f6ed; --negro:#000000; --pie:#0a0a0a; --tinta:#111111; --texto:#444444;
+  --gris:#666666; --pie-txt:#cfccc0; --tarjeta:#ffffff; --borde:#e6e2d5; --borde2:#d1cdbf;
+  --divisor:#eae7dc; --blanco:#ffffff; --error:#b3261e; --aviso:#fff6c9;
+  --f-body:'Outfit',Helvetica,Arial,sans-serif;
+  --f-logo:'Playfair Display',Georgia,'Times New Roman',serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{background:var(--crema);color:var(--tinta);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
+
+.testbar{background:var(--aviso);border-bottom:1px solid var(--borde2);font-size:13px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.testbar-in{max-width:600px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.testbar b{font-weight:700}
+
+.page{max-width:600px;margin:0 auto;background:var(--crema)}
+.head{background:var(--negro);color:var(--crema);text-align:center}
+.head img{width:100%;height:auto}
+.head .txt{padding:28px 24px 24px}
+.logo{font-family:var(--f-logo);font-weight:900;font-size:36px;letter-spacing:-.8px;line-height:1}
+.tagline{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;margin-top:10px}
+.bar{height:4px;background:#2a2a2a}
+.bar i{display:block;height:100%;width:0;background:var(--crema);transition:width .3s}
+
+.intro{padding:36px 32px 6px;padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}
+.hello{margin:0 0 8px;font-size:26px;font-weight:700;line-height:1.2;letter-spacing:-.3px;text-wrap:balance}
+.intro p{margin:0;max-width:52ch;color:var(--texto);font-size:15px}
+.badge{display:inline-block;background:var(--tinta);color:var(--blanco);font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:4px 12px;border-radius:30px;margin-bottom:14px}
+
+form{padding:12px 32px 36px;display:grid;gap:14px;padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}
+fieldset{border:0;border-top:1px solid var(--divisor);margin:0;padding:22px 0 4px;min-width:0}
+fieldset::after{content:"";display:block;clear:both}
+legend{float:left;padding:0;font-weight:700;font-size:17px;line-height:1.35;display:flex;gap:12px;width:100%}
+legend .n{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--tinta);color:var(--blanco);font-size:13px;display:grid;place-items:center;margin-top:-2px}
+.help{clear:both;padding-top:6px;font-size:13px;color:var(--gris);font-style:italic;margin:6px 0 0 40px}
+.err{clear:both;margin:10px 0 0 40px;font-size:14px;font-weight:500;color:var(--error)}
+.opts{clear:both;display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0 40px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.opt span{display:inline-block;border:1.5px solid var(--tinta);background:var(--tarjeta);border-radius:30px;padding:9px 15px;font-size:14px;font-weight:500;transition:background .15s,color .15s}
+.opt input:checked + span{background:var(--tinta);color:var(--blanco)}
+.opt input:focus-visible + span{outline:2px solid var(--tinta);outline-offset:3px}
+.npsf{clear:both;display:grid;grid-template-columns:repeat(11,1fr);gap:5px;margin:14px 0 0 40px;max-width:460px}
+.npsf .opt span{display:grid;place-items:center;width:100%;aspect-ratio:1;max-width:40px;padding:0;border-radius:50%;font-size:13px}
+.ends{display:flex;justify-content:space-between;max-width:460px;margin:6px 0 0 40px;font-size:11px;color:var(--gris)}
+.rows{clear:both;display:grid;gap:10px;margin:14px 0 0 40px;background:var(--tarjeta);border:1px solid var(--borde);border-radius:14px;padding:14px 16px}
+.rrow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px solid var(--divisor)}
+.rrow:last-child{border-bottom:0;padding-bottom:0}
+.rrow .lbl{font-size:15px;color:var(--texto);min-width:0}
+.moons{display:flex;gap:6px}
+.moonbtn{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--tinta);background:transparent;padding:0;transition:background .15s}
+.moonbtn.on{background:var(--tinta)}
+textarea,input[type=text]{clear:both;display:block;width:100%;margin:14px 0 0 40px;max-width:calc(100% - 40px);border:1px solid var(--borde2);border-radius:14px;background:var(--tarjeta);color:var(--tinta);padding:12px 14px;font:inherit;font-size:16px;resize:vertical;min-height:84px}
+textarea:focus,input[type=text]:focus{border-color:var(--tinta);outline:none}
+input[type=text]{min-height:0;border-radius:30px}
+.submit{display:grid;justify-items:center;gap:10px;padding-top:14px}
+.cta{display:inline-block;background:var(--tinta);color:var(--blanco);text-decoration:none;border:0;border-radius:30px;padding:15px 36px;font-weight:700;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;transition:transform .15s,opacity .15s}
+.cta:hover{transform:translateY(-2px)}
+.cta[disabled]{opacity:.5;cursor:wait;transform:none}
+.send-err{font-size:14px;color:var(--error);text-align:center;max-width:44ch;margin:0}
+
+.thanks{padding:56px 32px 52px;text-align:center;display:grid;gap:14px;justify-items:center}
+.thanks .eyebrow{font-size:16px;font-weight:600}
+.thanks h2{margin:0;font-weight:900;font-size:32px;text-transform:uppercase;line-height:1;text-wrap:balance}
+.thanks p{margin:0;max-width:44ch;color:var(--texto)}
+.debug{max-width:100%;width:100%;text-align:left;font-size:12px;color:var(--gris)}
+.debug pre{background:var(--tarjeta);border:1px dashed var(--borde2);border-radius:8px;padding:12px;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+
+.foot{background:var(--pie);padding:32px 20px 28px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.sedes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center}
+.sedes b{display:block;margin:0 0 6px;color:var(--crema);font-size:14px;font-weight:700}
+.sedes p{margin:0;color:var(--pie-txt);font-size:11.5px;line-height:1.6}
+.sedes span{color:var(--crema);font-weight:500;white-space:nowrap}
+.legal{margin-top:24px;padding-top:18px;border-top:1px solid #2a2a2a;text-align:center;color:var(--pie-txt);font-size:11px;line-height:1.6}
+
+@media (max-width:600px){
+  .intro{padding-top:28px}
+  form{padding-top:8px}
+  .opts,.rows,.npsf,.help,.err,.ends{margin-left:0}
+  textarea,input[type=text]{margin-left:0;max-width:100%}
+  .npsf .opt span{font-size:12px}
+  .sedes{grid-template-columns:1fr;gap:22px}
+  .cta{width:100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+
+<div class="testbar" id="testbar" hidden>
+  <div class="testbar-in"><b>Modo prueba · Encuesta vuelta de viaje · España.</b> Las respuestas no se envían.</div>
+</div>
+
+<div class="page">
+  <header class="head" id="head"></header>
+  <div class="bar"><i id="barFill"></i></div>
+  <main id="body"></main>
+  <footer class="foot">
+    <div class="sedes">
+      <div><b>Madrid</b><p>Paseo de la Habana, 9-11<br>28036, Madrid<br><span>+34 91 005 21 32</span></p></div>
+      <div><b>Valencia</b><p>Calle Roger de Lauria 28,<br>planta 4, 46002.<br><span>+34 96 010 52 34</span></p></div>
+      <div><b>México</b><p>Durango 252, Roma Nte., Cuauhtémoc<br>06700 CDMX, México.<br>WhatsApp <span>+34 623 38 83 44</span></p></div>
+      <div><b>Barcelona</b><p>Carrer de Còrsega, 271,<br>Eixample, 08008 Barcelona<br><span>+34 622 49 61 68</span></p></div>
+    </div>
+    <div class="legal" id="legal"></div>
+  </footer>
+</div>
+
+<script>
+/* =====================================================================
+   AJUSTES · Encuesta vuelta de viaje · España
+   Lo único que hay que tocar. La guía COMO-CONECTARLA.md explica cada dato.
+   ===================================================================== */
+const CONFIG = {
+  // 'prueba'  → no envía nada; enseña lo que se enviaría.
+  // 'hubspot' → guarda las respuestas en la ficha del contacto en HubSpot.
+  // 'webhook' → manda las respuestas a una dirección web (Make, Zapier, Google Sheets...).
+  modo: 'prueba',
+
+  hubspot: {
+    portalId: '',   // número de vuestra cuenta de HubSpot
+    formId: ''      // ID del formulario "Encuesta vuelta de viaje"
+  },
+
+  webhookUrl: '',   // solo si modo = 'webhook'
+
+  resenaGoogle: 'https://www.google.com/search?q=Honimunn+rese%C3%B1as', // cambiar por el enlace directo de reseñas de Google
+  privacidad: 'https://honimunn.com/politica-de-privacidad',           // revisar que esta dirección existe
+  cabecera: 'https://hivjzkcnuerbjrwptlvy.supabase.co/storage/v1/object/public/marketing-gallery/assets/fdae9298-09d4-4f8d-915d-4eb147f438a8.png'
+};
+/* ===================================================================== */
+
+const MERCADO='ES';
+const TX={
+ "send": "Enviar respuestas",
+ "sending": "Enviando…",
+ "optional": "Opcional",
+ "moons": "De 1 a 5 lunas",
+ "required": "Elegid una opción para poder enviar.",
+ "sendErr": "No hemos podido enviar vuestras respuestas. Revisad la conexión y volved a intentarlo.",
+ "privacy": "Política de privacidad",
+ "lo": "Nada probable",
+ "hi": "Muchísimo",
+ "badge": "30 segundos",
+ "title": "Contadnos vuestra munn",
+ "intro": "Seis preguntas rápidas. Leemos cada respuesta.",
+ "q1": "Del 0 al 10, ¿con qué probabilidad nos recomendaríais a otra pareja?",
+ "q2": "¿Cómo valoráis cada parte del viaje?",
+ "parts": [
+  "Atención y asesoramiento de vuestro Travel Designer",
+  "Vuelos y traslados",
+  "Alojamiento",
+  "Experiencias",
+  "Relación calidad-precio"
+ ],
+ "q3": "¿Tuvisteis algún problema durante el viaje?",
+ "q3no": "No, todo perfecto",
+ "q3si": "Sí",
+ "q3ph": "¿Qué pasó? Lo revisamos con vuestro Travel Designer",
+ "q4": "¿Qué fue lo mejor del viaje?",
+ "q5": "¿Qué mejoraríais?",
+ "q6": "¿Os gustaría recibir ideas para vuestro próximo viaje?",
+ "yes": "Sí, inspiradnos",
+ "no": "No, gracias",
+ "t9": [
+  "Eso sí es una Luna de Miel",
+  "Nos hace muchísima ilusión. ¿Nos dejáis una reseña en Google para que otras parejas os lean?",
+  "Escribir reseña"
+ ],
+ "t7": [
+  "Casi de 10",
+  "Gracias por contárnoslo. ¿Qué faltó para que fuera perfecto? Os escribiremos para entenderlo bien."
+ ],
+ "t0": [
+  "Lo sentimos de verdad",
+  "No era la Luna de Miel que soñabais. Os llamaremos en las próximas 48 horas laborables para hablarlo con calma."
+ ],
+ "demo": "Marta y Jose"
+};
+
+const ENCUESTA='vuelta_de_viaje', Q1NAME='nps', Q1FIELD='nps_viaje';
+const PARTES=['valoracion_atencion_td','valoracion_vuelos_traslados','valoracion_alojamiento','valoracion_experiencias','valoracion_calidad_precio'];
+function form(){
+ const nps=`<div class="npsf">${Array.from({length:11},(_,i)=>`<label class="opt"><input type="radio" name="nps" value="${i}" ${String(i)===st.pre?'checked':''}><span>${i}</span></label>`).join('')}</div><div class="ends"><span>${TX.lo}</span><span>${TX.hi}</span></div>`;
+ return intro()+`
+ <form id="f" novalidate>
+  ${q(1,TX.q1,nps+`<p class="err" id="err1" hidden>${TX.required}</p>`)}
+  ${q(2,TX.q2,`<div class="rows">${TX.parts.map((p,i)=>`<div class="rrow"><span class="lbl">${p}</span>${moons(PARTES[i],p)}</div>`).join('')}</div>`,TX.moons)}
+  ${q(3,TX.q3,radios('problema',[['no',TX.q3no],['si',TX.q3si]],null)+`<textarea id="problemaTxt" placeholder="${TX.q3ph}" hidden></textarea>`)}
+  ${q(4,TX.q4,`<textarea id="mejor" placeholder="${TX.optional}"></textarea>`)}
+  ${q(5,TX.q5,`<textarea id="mejorar" placeholder="${TX.optional}"></textarea>`)}
+  ${q(6,TX.q6,radios('ideas',[['si',TX.yes],['no',TX.no]],null))}
+  ${submitRow()}
+ </form>`}
+function onChange(e){ if(e.target.name==='problema') $('#problemaTxt').hidden=e.target.value!=='si' }
+function collect(f){
+ const val=n=>{const c=f.querySelector(`input[name="${n}"]:checked`);return c?c.value:''};
+ const moon=n=>{const g=f.querySelector(`.moons[data-name="${n}"]`);return g&&g.dataset.val?Number(g.dataset.val):''};
+ const txt=id=>{const e=f.querySelector('#'+id);return e&&!e.hidden?e.value.trim():''};
+ const d={email:st.email,nps_viaje:val('nps')===''?'':Number(val('nps'))};
+ PARTES.forEach(p=>d[p]=moon(p));
+ Object.assign(d,{tuvo_problema_viaje:sino(val('problema')),detalle_problema_viaje:txt('problemaTxt'),lo_mejor_del_viaje:txt('mejor'),que_mejorariais:txt('mejorar'),quiere_ideas_viaje:sino(val('ideas'))});
+ return d}
+function thanks(){
+ const n=Number(st.nps); const [h,p,b]=n>=9?TX.t9:n>=7?TX.t7:TX.t0;
+ const extra=b?`<a class="cta" href="${CONFIG.resenaGoogle}" target="_blank" rel="noopener">${b}</a>`:'';
+ return `<div class="thanks">${st.nombre?`<div class="eyebrow">${esc(st.nombre)},</div>`:''}<h2>${h}</h2><p>${p}</p>${extra}${debug()}</div>`}
+
+
+const qs=new URLSearchParams(location.search);
+const st={nombre:(qs.get('nombre')||'').trim().slice(0,60),email:(qs.get('email')||'').trim(),pre:qs.get('r'),done:false,nps:null,sent:null};
+if(/^\{\{/.test(st.nombre)) st.nombre='';
+if(/^\{\{/.test(st.email)) st.email='';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function q(n,title,inner,help=''){return `<fieldset id="q${n}"><legend><span class="n">${n}</span><span>${title}</span></legend>${help?`<div class="help">${help}</div>`:''}${inner}</fieldset>`}
+function radios(name,opts,pre){return `<div class="opts">${opts.map(([v,l])=>`<label class="opt"><input type="radio" name="${name}" value="${v}" ${pre===v?'checked':''}><span>${l}</span></label>`).join('')}</div>`}
+function moons(name,label){return `<div class="moons" data-name="${name}" role="group" aria-label="${label}">${[1,2,3,4,5].map(i=>`<button type="button" class="moonbtn" data-val="${i}" aria-label="${i} / 5"></button>`).join('')}</div>`}
+function intro(){return `<div class="intro"><span class="badge">${TX.badge}</span><h1 class="hello">${st.nombre?`¡Hola, ${esc(st.nombre)}!`:'¡Hola!'}</h1><p><strong>${TX.title}.</strong> ${TX.intro}</p></div>`}
+const submitRow=()=>`<div class="submit"><button type="submit" class="cta" id="sendBtn">${TX.send}</button><p class="send-err" id="sendErr" hidden>${TX.sendErr}</p></div>`;
+const sino=v=>v==='si'?'Sí':v==='no'?'No':'';
+
+async function enviar(d){
+ const limpio=Object.fromEntries(Object.entries(d).filter(([,v])=>v!==''&&v!=null));
+ if(CONFIG.modo==='hubspot'){
+  const body={fields:Object.entries(limpio).map(([name,value])=>({objectTypeId:'0-1',name,value:String(value)})),context:{pageUri:location.href.split('?')[0],pageName:document.title}};
+  const r=await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${CONFIG.hubspot.portalId}/${CONFIG.hubspot.formId}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok) throw new Error('HubSpot '+r.status+': '+await r.text());
+ }else if(CONFIG.modo==='webhook'){
+  const r=await fetch(CONFIG.webhookUrl,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({encuesta:ENCUESTA,mercado:MERCADO,nombre:st.nombre,fecha:new Date().toISOString(),...limpio})});
+  if(!r.ok&&r.type!=='opaque') throw new Error('Webhook '+r.status);
+ }
+ return limpio}
+
+function progress(){const f=$('#f'); if(!f){$('#barFill').style.width='100%';return}
+ const sets=[...f.querySelectorAll('fieldset')];
+ const done=sets.filter(s=>s.querySelector('input:checked')||[...s.querySelectorAll('.moons')].some(m=>m.dataset.val)||[...s.querySelectorAll('textarea,input[type=text]')].some(t=>t.value.trim())).length;
+ $('#barFill').style.width=Math.round(done/sets.length*100)+'%'}
+
+function wire(){
+ const f=$('#f'); if(!f){progress();return}
+ f.querySelectorAll('.moons').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.moonbtn'); if(!b) return; const v=+b.dataset.val; g.dataset.val=v; g.querySelectorAll('.moonbtn').forEach(x=>x.classList.toggle('on',+x.dataset.val<=v)); progress()}));
+ f.addEventListener('change',e=>{onChange(e); if(e.target.name===Q1NAME) $('#err1').hidden=true; progress()});
+ f.addEventListener('input',progress);
+ f.addEventListener('submit',async e=>{e.preventDefault();
+  const d=collect(f);
+  if(d[Q1FIELD]===''||d[Q1FIELD]==null){$('#err1').hidden=false;$('#q1').scrollIntoView({behavior:'smooth',block:'center'});return}
+  const btn=$('#sendBtn'); btn.disabled=true; btn.textContent=TX.sending; $('#sendErr').hidden=true;
+  try{ st.sent=await enviar(d); st.nps=d.nps_viaje; st.done=true; render(); window.scrollTo({top:0,behavior:'smooth'}) }
+  catch(err){ console.error(err); btn.disabled=false; btn.textContent=TX.send; $('#sendErr').hidden=false }
+ });
+ progress()}
+
+function debug(){return CONFIG.modo==='prueba'&&st.sent?`<details class="debug"><summary>Modo prueba: ver lo que se enviaría</summary><pre>${esc(JSON.stringify(st.sent,null,2))}</pre></details>`:''}
+
+function render(){
+ $('#legal').innerHTML=`honimunn.com · <a href="${CONFIG.privacidad}" target="_blank" rel="noopener">${TX.privacy}</a>`;
+ $('#body').innerHTML=st.done?thanks():form();
+ wire()}
+
+$('#head').innerHTML=`<img src="${CONFIG.cabecera}" alt="Honimunn" width="600" onerror="this.outerHTML='<div class=&quot;txt&quot;><div class=&quot;logo&quot;>Honimunn</div><div class=&quot;tagline&quot;>Hasta la munn y más allá</div></div>'">`;
+if(CONFIG.modo==='prueba'){ $('#testbar').hidden=false; if(!st.nombre) st.nombre=TX.demo; }
+render();
+
+</script>
+</body>
+</html>
