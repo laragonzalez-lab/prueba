@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Early Access 2026 · Honimunn</title>
+<meta name="description" content="Early Access 2026 de Honimunn: empezad a preparar vuestra luna de miel con tiempo.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@900&display=swap">
+<script>
+/* =====================================================================
+   AJUSTES (lo único que normalmente hay que tocar)
+   - FORMULARIO_URL: el enlace del formulario de Early Access.
+   - MODO_FORMULARIO:
+       "dentro" -> el formulario se ve dentro de la página.
+       "enlace" -> no se mete dentro; todos los botones abren el enlace.
+     Si al abrir la landing el recuadro del formulario sale vacío o con
+     un error, cambiad "dentro" por "enlace" y listo.
+   - ALTO_FORMULARIO: alto del recuadro en píxeles (subidlo si se corta).
+   ===================================================================== */
+var FORMULARIO_URL = "https://app.honimunn.com/contacto/early-access-2026-es";
+var MODO_FORMULARIO = "dentro";
+var ALTO_FORMULARIO = 1100;
+</script>
+<style>
+:root{
+  --crema:#f7f6ed; --negro:#000; --tinta:#111; --texto:#444; --gris:#666;
+  --tarjeta:#fff; --borde:#e6e2d5; --divisor:#eae7dc; --pie-txt:#cfccc0;
+  --f-body:'Outfit',Helvetica,Arial,sans-serif;
+  --f-logo:'Playfair Display',Georgia,'Times New Roman',serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0}
+body{background:var(--crema);color:var(--tinta);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* Cabecera */
+.top{background:var(--negro);color:var(--crema)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:18px;padding-bottom:18px}
+.logo{font-family:var(--f-logo);font-weight:900;font-size:28px;letter-spacing:-.6px;line-height:1;text-decoration:none}
+.top .cta{background:var(--crema);color:var(--tinta);padding:11px 20px;font-size:12px}
+
+/* Portada */
+.hero{background:var(--negro);color:var(--crema);padding:72px 0 88px}
+.eyebrow{display:inline-block;border:1px solid var(--crema);border-radius:30px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;margin-bottom:22px}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.08;letter-spacing:-1px;font-weight:700;margin:0 0 22px;max-width:16ch;text-wrap:balance}
+.hero p{margin:0 0 34px;max-width:52ch;color:var(--pie-txt);font-size:18px}
+
+/* Botón */
+.cta{display:inline-block;background:var(--tinta);color:#fff;text-decoration:none;border:0;border-radius:30px;padding:16px 34px;font-weight:700;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;transition:transform .15s;cursor:pointer;white-space:nowrap}
+.cta:hover{transform:translateY(-2px)}
+.cta.claro{background:var(--crema);color:var(--tinta)}
+
+/* Secciones */
+section.blk{padding:80px 0}
+.blk h2{font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.5px;margin:0 0 14px;text-wrap:balance}
+.blk .lead{margin:0 0 40px;max-width:60ch;color:var(--texto)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--tarjeta);border:1px solid var(--borde);border-radius:18px;padding:28px 26px}
+.card .n{width:34px;height:34px;border-radius:50%;background:var(--tinta);color:#fff;display:grid;place-items:center;font-weight:600;font-size:14px;margin-bottom:16px}
+.card h3{margin:0 0 8px;font-size:19px;line-height:1.3}
+.card p{margin:0;color:var(--texto);font-size:16px}
+.alt{background:#efede1}
+
+/* Formulario */
+#formulario{scroll-margin-top:20px}
+.formbox{background:var(--tarjeta);border:1px solid var(--borde);border-radius:18px;overflow:hidden}
+.formbox iframe{display:block;width:100%;border:0}
+.fallback{margin:16px 0 0;font-size:14px;color:var(--gris);text-align:center}
+.solo-enlace{text-align:center}
+.solo-enlace .lead{margin-left:auto;margin-right:auto}
+
+/* Pie */
+footer{background:var(--negro);color:var(--pie-txt);padding:44px 0;font-size:14px;text-align:center}
+footer .logo{color:var(--crema);font-size:24px;display:inline-block;margin-bottom:12px}
+footer p{margin:4px 0}
+
+@media (max-width:760px){
+  .grid3{grid-template-columns:1fr}
+  .hero{padding:52px 0 64px}
+  section.blk{padding:60px 0}
+  .top .cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://honimunn.com">Honimunn</a>
+    <a class="cta js-cta" href="#formulario">Quiero el Early Access</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Early Access 2026</span>
+    <h1>Vuestra luna de miel de 2026, pensada con tiempo</h1>
+    <p>Abrimos antes la agenda de 2026 para las parejas que quieren empezar ya. Contadnos cuándo os casáis y qué os apetece, y nos ponemos con ello.</p>
+    <a class="cta claro js-cta" href="#formulario">Apuntarme al Early Access</a>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <h2>Por qué conviene empezar pronto</h2>
+    <p class="lead">Las bodas se concentran en unos pocos meses, y los viajes de después también. Quien reserva antes elige; quien llega tarde se adapta a lo que queda.</p>
+    <div class="grid3">
+      <div class="card"><h3>Más opciones de vuelo y hotel</h3><p>En temporada alta, los alojamientos pequeños y los vuelos con buen horario son lo primero que se agota.</p></div>
+      <div class="card"><h3>Margen para ajustar</h3><p>Con tiempo podemos probar rutas, cambiar el orden de las etapas o mover fechas sin prisas.</p></div>
+      <div class="card"><h3>Una cosa menos antes de la boda</h3><p>El viaje queda encarrilado mientras os ocupáis de todo lo demás.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk alt">
+  <div class="wrap">
+    <h2>Cómo funciona</h2>
+    <p class="lead">Tres pasos, sin compromiso hasta que tengáis una propuesta que os convenza.</p>
+    <div class="grid3">
+      <div class="card"><div class="n">1</div><h3>Rellenáis el formulario</h3><p>Fechas aproximadas, presupuesto orientativo y lo que os gustaría vivir.</p></div>
+      <div class="card"><div class="n">2</div><h3>Os contactamos</h3><p>Una persona del equipo revisa vuestras respuestas y os escribe para concretar.</p></div>
+      <div class="card"><div class="n">3</div><h3>Diseñamos vuestro viaje</h3><p>Preparamos un itinerario a medida, con la logística resuelta y explicada.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="formulario">
+  <div class="wrap">
+    <div id="modo-dentro">
+      <h2>Apuntaos al Early Access 2026</h2>
+      <p class="lead">Son unos minutos. Os respondemos personalmente.</p>
+      <div class="formbox"><iframe id="form-iframe" title="Formulario Early Access 2026" loading="lazy"></iframe></div>
+      <p class="fallback">¿No veis el formulario? <a class="js-url" href="#" target="_blank" rel="noopener">Abridlo aquí</a>.</p>
+    </div>
+    <div id="modo-enlace" class="solo-enlace" hidden>
+      <h2>Apuntaos al Early Access 2026</h2>
+      <p class="lead">Son unos minutos. Os respondemos personalmente.</p>
+      <a class="cta js-url" href="#">Ir al formulario</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="https://honimunn.com">Honimunn</a>
+    <p>Madrid · Barcelona · Valencia · Ciudad de México</p>
+    <p><a href="https://honimunn.com">honimunn.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var enlace = MODO_FORMULARIO === "enlace";
+  document.querySelectorAll(".js-url").forEach(function(a){ a.href = FORMULARIO_URL; });
+  if (enlace) {
+    document.getElementById("modo-dentro").hidden = true;
+    document.getElementById("modo-enlace").hidden = false;
+    document.querySelectorAll(".js-cta").forEach(function(a){ a.href = FORMULARIO_URL; });
+  } else {
+    var f = document.getElementById("form-iframe");
+    f.style.height = ALTO_FORMULARIO + "px";
+    f.src = FORMULARIO_URL;
+  }
+})();
+</script>
+</body>
+</html>
