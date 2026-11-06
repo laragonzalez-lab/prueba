@@ -1,0 +1,126 @@
+<!-- Landing Early Access 2026 · Honimunn · versión para WordPress (bloque HTML personalizado) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@900&display=swap">
+<style>
+.hm-ea{
+  --crema:#f7f6ed; --negro:#000; --tinta:#111; --texto:#444; --gris:#666;
+  --tarjeta:#fff; --borde:#e6e2d5; --divisor:#eae7dc; --pie-txt:#cfccc0;
+  --f-body:'Outfit',Helvetica,Arial,sans-serif;
+  --f-logo:'Playfair Display',Georgia,'Times New Roman',serif;
+  color-scheme:light;
+}
+.hm-ea,.hm-ea *{box-sizing:border-box}
+.hm-ea{background:var(--crema);color:var(--tinta);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.hm-ea a{color:inherit}
+.hm-ea :focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
+.hm-ea .wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* Cabecera */
+.hm-ea .top{background:var(--negro);color:var(--crema)}
+.hm-ea .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:18px;padding-bottom:18px}
+.hm-ea .logo{font-family:var(--f-logo);font-weight:900;font-size:28px;letter-spacing:-.6px;line-height:1;text-decoration:none}
+.hm-ea .top .cta{background:var(--crema);color:var(--tinta);padding:11px 20px;font-size:12px}
+
+/* Portada */
+.hm-ea .hero{background:var(--negro);color:var(--crema);padding:72px 0 88px}
+.hm-ea .eyebrow{display:inline-block;border:1px solid var(--crema);border-radius:30px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;margin-bottom:22px}
+.hm-ea .hero h1{font-size:clamp(34px,6vw,60px);line-height:1.08;letter-spacing:-1px;font-weight:700;margin:0 0 22px;max-width:16ch;text-wrap:balance}
+.hm-ea .hero p{margin:0 0 34px;max-width:52ch;color:var(--pie-txt);font-size:18px}
+
+/* Botón */
+.hm-ea .cta{display:inline-block;background:var(--tinta);color:#fff;text-decoration:none;border:0;border-radius:30px;padding:16px 34px;font-weight:700;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;transition:transform .15s;cursor:pointer;white-space:nowrap}
+.hm-ea .cta:hover{transform:translateY(-2px)}
+.hm-ea .cta.claro{background:var(--crema);color:var(--tinta)}
+
+/* Secciones */
+.hm-ea section.blk{padding:80px 0}
+.hm-ea .blk h2{font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.5px;margin:0 0 14px;text-wrap:balance}
+.hm-ea .blk .lead{margin:0 0 40px;max-width:60ch;color:var(--texto)}
+.hm-ea .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hm-ea .card{background:var(--tarjeta);border:1px solid var(--borde);border-radius:18px;padding:28px 26px}
+.hm-ea .card .n{width:34px;height:34px;border-radius:50%;background:var(--tinta);color:#fff;display:grid;place-items:center;font-weight:600;font-size:14px;margin-bottom:16px}
+.hm-ea .card h3{margin:0 0 8px;font-size:19px;line-height:1.3}
+.hm-ea .card p{margin:0;color:var(--texto);font-size:16px}
+.hm-ea .alt{background:#efede1}
+
+/* Formulario */
+.hm-ea #formulario{scroll-margin-top:20px}
+.hm-ea .solo-enlace{text-align:center}
+.hm-ea .solo-enlace .lead{margin-left:auto;margin-right:auto}
+
+/* Pie */
+.hm-ea footer{background:var(--negro);color:var(--pie-txt);padding:44px 0;font-size:14px;text-align:center}
+.hm-ea footer .logo{color:var(--crema);font-size:24px;display:inline-block;margin-bottom:12px}
+.hm-ea footer p{margin:4px 0}
+
+@media (max-width:760px){
+  .hm-ea .grid3{grid-template-columns:1fr}
+  .hm-ea .hero{padding:52px 0 64px}
+  .hm-ea section.blk{padding:60px 0}
+  .hm-ea .top .cta{display:none}
+}
+
+.hm-ea h1,.hm-ea h2,.hm-ea h3{font-family:var(--f-body);color:inherit;text-transform:none}
+.hm-ea a.cta{text-decoration:none}
+.hm-ea .hero h1,.hm-ea .hero p{color:inherit}
+.hm-ea .hero p{color:var(--pie-txt)}
+</style>
+<div class="hm-ea">
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://honimunn.com">Honimunn</a>
+    <a class="cta" href="https://app.honimunn.com/contacto/early-access-2026-es">Quiero el Early Access</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Early Access 2026</span>
+    <h1>Vuestra luna de miel de 2026, pensada con tiempo</h1>
+    <p>Abrimos antes la agenda de 2026 para las parejas que quieren empezar ya. Contadnos cuándo os casáis y qué os apetece, y nos ponemos con ello.</p>
+    <a class="cta claro" href="https://app.honimunn.com/contacto/early-access-2026-es">Apuntarme al Early Access</a>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <h2>Por qué conviene empezar pronto</h2>
+    <p class="lead">Las bodas se concentran en unos pocos meses, y los viajes de después también. Quien reserva antes elige; quien llega tarde se adapta a lo que queda.</p>
+    <div class="grid3">
+      <div class="card"><h3>Más opciones de vuelo y hotel</h3><p>En temporada alta, los alojamientos pequeños y los vuelos con buen horario son lo primero que se agota.</p></div>
+      <div class="card"><h3>Margen para ajustar</h3><p>Con tiempo podemos probar rutas, cambiar el orden de las etapas o mover fechas sin prisas.</p></div>
+      <div class="card"><h3>Una cosa menos antes de la boda</h3><p>El viaje queda encarrilado mientras os ocupáis de todo lo demás.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk alt">
+  <div class="wrap">
+    <h2>Cómo funciona</h2>
+    <p class="lead">Tres pasos, sin compromiso hasta que tengáis una propuesta que os convenza.</p>
+    <div class="grid3">
+      <div class="card"><div class="n">1</div><h3>Rellenáis el formulario</h3><p>Fechas aproximadas, presupuesto orientativo y lo que os gustaría vivir.</p></div>
+      <div class="card"><div class="n">2</div><h3>Os contactamos</h3><p>Una persona del equipo revisa vuestras respuestas y os escribe para concretar.</p></div>
+      <div class="card"><div class="n">3</div><h3>Diseñamos vuestro viaje</h3><p>Preparamos un itinerario a medida, con la logística resuelta y explicada.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="formulario">
+  <div class="wrap">
+    <div class="solo-enlace">
+      <h2>Apuntaos al Early Access 2026</h2>
+      <p class="lead">Son unos minutos. Os respondemos personalmente.</p>
+      <a class="cta" href="https://app.honimunn.com/contacto/early-access-2026-es">Ir al formulario</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="https://honimunn.com">Honimunn</a>
+    <p>Madrid · Barcelona · Valencia · Ciudad de México</p>
+    <p><a href="https://honimunn.com">honimunn.com</a></p>
+  </div>
+</footer>
+</div>
