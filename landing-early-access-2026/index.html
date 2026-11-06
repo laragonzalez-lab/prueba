@@ -37,11 +37,7 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 
-/* Cabecera */
-.top{background:var(--negro);color:var(--crema)}
-.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:18px;padding-bottom:18px}
 .logo{font-family:var(--f-logo);font-weight:900;font-size:28px;letter-spacing:-.6px;line-height:1;text-decoration:none}
-.top .cta{background:var(--crema);color:var(--tinta);padding:11px 20px;font-size:12px}
 
 /* Portada */
 .hero{background:var(--negro);color:var(--crema);padding:72px 0 88px}
@@ -82,18 +78,11 @@ footer p{margin:4px 0}
   .grid3{grid-template-columns:1fr}
   .hero{padding:52px 0 64px}
   section.blk{padding:60px 0}
-  .top .cta{display:none}
 }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap">
-    <a class="logo" href="https://honimunn.com">Honimunn</a>
-    <a class="cta js-cta" href="#formulario">Quiero el Early Access</a>
-  </div>
-</header>
 
 <section class="hero">
   <div class="wrap">
