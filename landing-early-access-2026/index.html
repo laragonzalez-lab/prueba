@@ -153,7 +153,7 @@ details p{margin:0 0 22px;color:var(--texto)}
       <h1>Vuestra luna de miel, con hasta <strong>1.000 € menos</strong>.</h1>
       <p>Los descuentos más grandes que hemos hecho nunca. Bloqueadlo hoy con un depósito de 500 €, 100 % reembolsable, y diseñamos el viaje con calma.</p>
       <div>
-        <div class="cuenta-tit" id="cuenta-tit">El Early Access empieza en</div>
+        <div class="cuenta-tit" id="cuenta-tit">El Early Access termina en</div>
         <div class="cuenta">
           <div><b id="c-d">00</b><span>días</span></div>
           <div><b id="c-h">00</b><span>horas</span></div>
@@ -195,7 +195,7 @@ details p{margin:0 0 22px;color:var(--texto)}
       <div class="paso"><div class="n">2</div><h3>Bloqueáis el descuento con 500 €</h3><p>Pagáis un depósito de 500 € antes del lunes 23 y el descuento queda guardado para vosotros. Es 100 % reembolsable.</p></div>
       <div class="paso"><div class="n">3</div><h3>Diseñamos el viaje juntos</h3><p>Tenéis hasta el 10 de diciembre para confirmar. Si al final no reserváis, os devolvemos el depósito.</p></div>
     </div>
-    <div class="plazos"><p><strong>¿Preferís pagarlo a plazos?</strong> Podéis financiar vuestro viaje en 6 o 12 meses, sin intereses. Ahora mismo, a 12 meses no hay comisión de apertura (0&nbsp;%); a 6 meses, la comisión de apertura es del 2&nbsp;%. Preguntadnos y os lo explicamos.</p></div>
+    <div class="plazos"><p><strong>¿Preferís pagarlo a plazos?</strong> Podéis financiar vuestro viaje en 6 o 12 meses, sin intereses. Preguntadnos por ello.</p></div>
   </div>
 </section>
 
@@ -236,11 +236,11 @@ details p{margin:0 0 22px;color:var(--texto)}
     <div class="viajes">
       <a class="viaje js-form" href="#">
         <div class="foto">[FOTO: Tanzania y lago Eyasi]<img src="https://hivjzkcnuerbjrwptlvy.supabase.co/storage/v1/object/public/marketing-gallery/assets/8e39067e-80d4-43cc-b218-6f28ed215b98.jpg" alt="Tanzania y lago Eyasi" onerror="this.remove()"></div>
-        <div class="info"><span class="zona">África</span><span class="nombre">Tanzania y lago Eyasi</span><span class="precio">[X] días · desde <strong>5.500 €</strong> por persona</span></div>
+        <div class="info"><span class="zona">África</span><span class="nombre">Tanzania y lago Eyasi</span><span class="precio">[X] días · desde <strong>5.000 €</strong> por persona</span></div>
       </a>
       <a class="viaje js-form" href="#">
         <div class="foto">[FOTO: Alaska y Hawái]<img src="https://hivjzkcnuerbjrwptlvy.supabase.co/storage/v1/object/public/marketing-gallery/assets/4db104c7-cece-4d77-950a-c90c97f16d82.jpg" alt="Alaska y Hawái" onerror="this.remove()"></div>
-        <div class="info"><span class="zona">América · Oceanía</span><span class="nombre">Alaska y Hawái</span><span class="precio">23 días · desde <strong>9.000 €</strong> por persona</span></div>
+        <div class="info"><span class="zona">América · Oceanía</span><span class="nombre">Alaska y Hawái</span><span class="precio">23 días · desde <strong>7.500 €</strong> por persona</span></div>
       </a>
       <a class="viaje js-form" href="#">
         <div class="foto">[FOTO: Japón, Polinesia Francesa, Hawái y San Francisco]<img src="https://hivjzkcnuerbjrwptlvy.supabase.co/storage/v1/object/public/marketing-gallery/assets/b30b8cc7-6c8b-4156-932d-b8aaf9a2f7c2.jpg" alt="Japón, Polinesia Francesa, Hawái y San Francisco" onerror="this.remove()"></div>
@@ -318,8 +318,7 @@ if (WHATSAPP) { var wa = document.getElementById("wa"); wa.href = "https://wa.me
   function dos(n){ return (n < 10 ? "0" : "") + n; }
   function tic(){
     var ahora = Date.now(), meta = ahora;
-    if (ahora < ini) { meta = ini; tit.textContent = "El Early Access empieza en"; }
-    else if (ahora < fin) { meta = fin; tit.textContent = "El Early Access termina en"; }
+    if (ahora < fin) { meta = fin; tit.textContent = "El Early Access termina en"; }
     else { tit.textContent = "El Early Access ha terminado"; }
     var s = Math.max(0, Math.floor((meta - ahora) / 1000));
     document.getElementById("c-d").textContent = dos(Math.floor(s / 86400));
