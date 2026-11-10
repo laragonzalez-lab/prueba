@@ -153,7 +153,7 @@ details p{margin:0 0 22px;color:var(--texto)}
       <h1>Vuestra luna de miel, con hasta <strong>750 € menos</strong>.</h1>
       <p>Nuestro Black Friday para lunas de miel. Bloqueadlo hoy con un depósito de 500 €, 100 % reembolsable, y diseñamos el viaje con calma.</p>
       <div>
-        <div class="cuenta-tit" id="cuenta-tit">El Black Friday empieza en</div>
+        <div class="cuenta-tit" id="cuenta-tit">El Black Friday termina en</div>
         <div class="cuenta">
           <div><b id="c-d">00</b><span>días</span></div>
           <div><b id="c-h">00</b><span>horas</span></div>
@@ -318,8 +318,7 @@ if (WHATSAPP) { var wa = document.getElementById("wa"); wa.href = "https://wa.me
   function dos(n){ return (n < 10 ? "0" : "") + n; }
   function tic(){
     var ahora = Date.now(), meta = ahora;
-    if (ahora < ini) { meta = ini; tit.textContent = "El Black Friday empieza en"; }
-    else if (ahora < fin) { meta = fin; tit.textContent = "El Black Friday termina en"; }
+    if (ahora < fin) { meta = fin; tit.textContent = "El Black Friday termina en"; }
     else { tit.textContent = "El Black Friday ha terminado"; }
     var s = Math.max(0, Math.floor((meta - ahora) / 1000));
     document.getElementById("c-d").textContent = dos(Math.floor(s / 86400));
