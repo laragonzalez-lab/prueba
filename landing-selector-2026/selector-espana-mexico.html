@@ -1,0 +1,86 @@
+<!-- Página selectora España / México · Honimunn · para pegar en un bloque «HTML personalizado» de WordPress -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+<style>
+html,body{overflow-x:clip}
+.hm-sel{--crema:#f7f6ed;--negro:#000;--tinta:#111;--gris-claro:#a8a598;--pie-txt:#cfccc0;--borde-osc:#3a3934;--f:'Outfit',Helvetica,Arial,sans-serif}
+.hm-sel,.hm-sel *{box-sizing:border-box!important}
+.hm-sel{position:relative!important;z-index:0!important;isolation:isolate!important;margin:0 calc(50% - 50vw)!important;width:100vw!important;max-width:100vw!important;background:var(--negro)!important;color:var(--crema)!important;font-family:var(--f)!important;font-size:17px!important;line-height:1.6!important;-webkit-font-smoothing:antialiased!important;min-height:100vh!important;display:flex!important;align-items:center!important;padding:200px max(20px,4.5vw) 112px!important}
+.hm-sel .wrap{max-width:980px!important;margin:0 auto!important;width:100%!important;text-align:center!important}
+.hm-sel .pill{display:inline-block!important;border:1px solid var(--crema)!important;border-radius:30px!important;padding:7px 16px!important;font-size:12px!important;font-weight:500!important;letter-spacing:2px!important;text-transform:uppercase!important;margin:0 0 28px!important}
+.hm-sel h1{margin:0 0 18px!important;font-family:var(--f)!important;font-size:clamp(40px,6vw,72px)!important;line-height:1.05!important;letter-spacing:-2px!important;font-weight:300!important;color:inherit!important;text-wrap:balance!important}
+.hm-sel h1 strong{font-weight:600!important}
+.hm-sel .sub{margin:0 auto 48px!important;max-width:560px!important;font-size:19px!important;color:var(--pie-txt)!important}
+.hm-sel .paises{display:flex!important;flex-wrap:wrap!important;gap:20px!important;justify-content:center!important}
+.hm-sel .pais{flex:1 1 300px!important;max-width:440px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:10px!important;text-align:left!important;text-decoration:none!important;color:var(--crema)!important;border:1px solid var(--borde-osc)!important;border-radius:24px!important;padding:32px!important;transition:transform .15s,border-color .15s!important}
+.hm-sel .pais:hover{transform:translateY(-3px)!important;border-color:var(--crema)!important}
+.hm-sel .pais.detectado{background:var(--crema)!important;color:var(--negro)!important;border-color:var(--crema)!important}
+.hm-sel .bandera{font-size:40px!important;line-height:1!important}
+.hm-sel .nombre{font-family:var(--f)!important;font-size:30px!important;font-weight:500!important;line-height:1.2!important}
+.hm-sel .moneda{font-size:15px!important;opacity:.75!important}
+.hm-sel .ir{margin-top:14px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;font-weight:600!important;font-size:16px!important}
+.hm-sel .ir::after{content:"→"!important;transition:transform .15s!important}
+.hm-sel .pais:hover .ir::after{transform:translateX(4px)!important}
+.hm-sel .nota{margin:32px 0 0!important;font-size:13px!important;color:var(--gris-claro)!important}
+@media (max-width:600px){
+.hm-sel{padding:150px 20px 64px!important;min-height:0!important}
+.hm-sel .pais{padding:24px!important}
+.hm-sel .nombre{font-size:26px!important}
+.hm-sel .pill{font-size:10px!important;letter-spacing:1px!important;padding:6px 12px!important}
+}
+/* Ocultar el título automático de la página de WordPress */
+.page-title,.entry-title,.page-header,.entry-header,.m-page-title,.o-page-title,.l-page-title{display:none!important}
+</style>
+<div class="hm-sel">
+  <div class="wrap">
+    <span class="pill" id="sel-campana">Early Access · hasta el 23 de noviembre</span>
+    <h1>¿Desde dónde <strong>viajáis</strong>?</h1>
+    <p class="sub">Os llevamos a la oferta de vuestro país, con los precios en vuestra moneda.</p>
+    <div class="paises" id="sel-paises">
+      <a class="pais" id="sel-es" href="https://honimunn.com/earlyaccess">
+        <span class="bandera" aria-hidden="true">🇪🇸</span>
+        <span class="nombre">España</span>
+        <span class="moneda">Precios en euros</span>
+        <span class="ir">Ver la oferta</span>
+      </a>
+      <a class="pais" id="sel-mx" href="https://honimunn.com.mx/earlyaccess">
+        <span class="bandera" aria-hidden="true">🇲🇽</span>
+        <span class="nombre">México</span>
+        <span class="moneda">Precios en pesos mexicanos</span>
+        <span class="ir">Ver la oferta</span>
+      </a>
+    </div>
+    <p class="nota">¿Vivís en otro país? Elegid el de la moneda en la que preferís pagar.</p>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   AJUSTES (lo único que normalmente hay que tocar)
+   ===================================================================== */
+var ENLACES = {
+  es: { earlyaccess: "https://honimunn.com/earlyaccess",    blackfriday: "https://honimunn.com/blackfriday" },
+  mx: { earlyaccess: "https://honimunn.com.mx/earlyaccess", blackfriday: "https://honimunn.com.mx/blackfriday" }
+};
+// Momento en que cada país pasa del Early Access al Black Friday (hora local de cada país)
+var CAMBIO = { es: "2026-11-24T00:00:00+01:00", mx: "2026-11-24T00:00:00-06:00" };
+
+/* --- A partir de aquí no hace falta tocar nada --- */
+(function(){
+  var ahora = Date.now();
+  var extra = location.search || "";   // Conserva los utm_ que pongáis en el enlace de redes
+  ["es","mx"].forEach(function(p){
+    var fase = ahora < new Date(CAMBIO[p]).getTime() ? "earlyaccess" : "blackfriday";
+    document.getElementById("sel-" + p).href = ENLACES[p][fase] + extra;
+  });
+  var zona = "";
+  try { zona = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch(e) {}
+  var esMx = /^America\//.test(zona);
+  var detectado = document.getElementById(esMx ? "sel-mx" : "sel-es");
+  detectado.classList.add("detectado");
+  detectado.parentNode.insertBefore(detectado, detectado.parentNode.firstChild);
+  var faseTitulo = ahora < new Date(CAMBIO[esMx ? "mx" : "es"]).getTime();
+  document.getElementById("sel-campana").textContent = faseTitulo
+    ? "Early Access · hasta el 23 de noviembre"
+    : "Black Friday · hasta el 30 de noviembre";
+})();
+</script>
