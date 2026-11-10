@@ -92,6 +92,16 @@ html{scroll-behavior:smooth}
 .hm-ea .volver{text-align:center!important;padding-bottom:40px!important}
 .hm-ea .cond{padding-bottom:56px!important}
 .hm-ea .legal{margin:0 auto!important;max-width:860px!important;font-size:12px!important;color:var(--gris)!important;text-align:center!important}
+.hm-ea .blk.testi{padding-top:0!important}
+.hm-ea .blk.viajes-sec{padding-bottom:56px!important}
+.hm-ea #reservar{scroll-margin-top:100px!important}
+.hm-ea #form-enlace{display:flex!important;flex-direction:column!important;gap:18px!important;align-items:flex-start!important;width:100%!important}
+.hm-ea #form-dentro{width:100%!important}
+.hm-ea .caja.con-form{padding:8px!important}
+.hm-ea .reservar .wrap:has(.con-form){align-items:flex-start!important}
+.hm-ea .caja iframe{display:block!important;width:100%!important;border:0!important;border-radius:18px!important;background:#fff!important}
+.hm-ea .fallback{margin:10px 0 6px!important;font-size:13px!important;color:var(--gris)!important;text-align:center!important}
+.hm-ea .fallback a{color:var(--tinta)!important;text-decoration:underline!important}
 @media (max-width:600px){
 .hm-ea .hero{padding-top:150px!important;padding-bottom:64px!important}
 .hm-ea .blk{padding-top:72px!important;padding-bottom:72px!important}
@@ -154,7 +164,7 @@ html{scroll-behavior:smooth}
     <p class="eyebrow">Cómo funciona</p>
     <h2>Bloqueáis el precio ahora. Decidís con calma.</h2>
     <div class="pasos">
-      <div class="paso"><div class="n">1</div><h3>Contadnos vuestra idea</h3><p>Rellenáis un formulario corto con fechas, presupuesto y qué os apetece. Un agente os escribe en menos de 48 h.</p></div>
+      <div class="paso"><div class="n">1</div><h3>Contadnos vuestra idea</h3><p>Rellenáis un formulario corto con fechas, presupuesto y qué os apetece. Un agente os escribe en menos de 48&nbsp;h.</p></div>
       <div class="paso"><div class="n">2</div><h3>Bloqueáis el descuento con 500 €</h3><p>Pagáis un depósito de 500 € antes del lunes 23 y el descuento queda guardado para vosotros. Es 100 % reembolsable.</p></div>
       <div class="paso"><div class="n">3</div><h3>Diseñamos el viaje juntos</h3><p>Tenéis hasta el 10 de diciembre para confirmar. Si al final no reserváis, os devolvemos el depósito.</p></div>
     </div>
@@ -168,7 +178,7 @@ html{scroll-behavior:smooth}
     <div class="izq">
       <p class="eyebrow">Bloquead vuestro descuento</p>
       <h2>Contadnos vuestra idea.</h2>
-      <p>Rellenad el formulario y un agente os contacta en menos de 48 h para explicaros el depósito y empezar a diseñar vuestro viaje.</p>
+      <p>Rellenad el formulario y un agente os contacta en menos de 48&nbsp;h para explicaros el depósito y empezar a diseñar vuestro viaje.</p>
       <ul class="checks">
         <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f7f6ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sin compromiso</li>
         <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f7f6ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Depósito de 500 €, 100 % reembolsable</li>
@@ -176,17 +186,23 @@ html{scroll-behavior:smooth}
       </ul>
       <a class="wa" id="wa" href="#" hidden>¿Preferís hablar ya? Escribidnos por WhatsApp</a>
     </div>
-    <div class="caja">
-      <h3>Formulario Early Access</h3>
-      <p>Nombre, contacto, destino, fechas y presupuesto. Son un par de minutos.</p>
-      <a class="btn btn-negro js-form" href="#">Quiero bloquear mi descuento</a>
-      <p class="nota">No se paga nada al enviar el formulario.</p>
+    <div class="caja" id="caja-form">
+      <div id="form-enlace">
+        <h3>Formulario Early Access</h3>
+        <p>Nombre, contacto, destino, fechas y presupuesto. Son un par de minutos.</p>
+        <a class="btn btn-negro js-url" href="#">Quiero bloquear mi descuento</a>
+        <p class="nota">No se paga nada al enviar el formulario.</p>
+      </div>
+      <div id="form-dentro">
+        <iframe id="form-iframe" title="Formulario Early Access" loading="lazy"></iframe>
+        <p class="fallback">¿No veis el formulario? <a class="js-url" href="#" target="_blank" rel="noopener">Abridlo aquí</a>.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ IDEAS DE VIAJE ============ -->
-<section class="blk">
+<section class="blk viajes-sec">
   <div class="wrap">
     <p class="eyebrow">Ideas para empezar</p>
     <h2>Tres viajes que ya hemos diseñado.</h2>
@@ -245,12 +261,28 @@ html{scroll-behavior:smooth}
    AJUSTES (lo único que normalmente hay que tocar)
    ===================================================================== */
 var FORMULARIO_URL = "https://app.honimunn.com/contacto/early-access-2026-es";
+var MODO_FORMULARIO = "dentro";   // "dentro" = formulario dentro de la página · "enlace" = botón que abre el formulario
+var ALTO_FORMULARIO = 950;        // Alto del formulario en píxeles (subidlo si se corta)
 var WHATSAPP = "";   // Ej.: "34600000000" (con 34 delante, sin espacios ni +). Vacío = no se muestra.
 var INICIO = "2026-11-16T00:00:00+01:00";   // Empieza el Early Access (hora de Madrid)
 var FIN    = "2026-11-23T23:59:59+01:00";   // Termina el Early Access (hora de Madrid)
 
 /* --- A partir de aquí no hace falta tocar nada --- */
-document.querySelectorAll(".js-form").forEach(function(a){ a.href = FORMULARIO_URL; });
+document.querySelectorAll(".js-url").forEach(function(a){ a.href = FORMULARIO_URL; });
+(function(){
+  var dentro = MODO_FORMULARIO === "dentro";
+  var ocultar = function(id){ document.getElementById(id).style.setProperty("display","none","important"); };
+  if (dentro) {
+    var f = document.getElementById("form-iframe");
+    f.style.setProperty("height", ALTO_FORMULARIO + "px", "important");
+    f.src = FORMULARIO_URL;
+    document.getElementById("caja-form").classList.add("con-form");
+    ocultar("form-enlace");
+  } else {
+    ocultar("form-dentro");
+  }
+  document.querySelectorAll(".js-form").forEach(function(a){ a.href = dentro ? "#reservar" : FORMULARIO_URL; });
+})();
 if (WHATSAPP) { var wa = document.getElementById("wa"); wa.href = "https://wa.me/" + WHATSAPP; wa.hidden = false; }
 
 (function(){
