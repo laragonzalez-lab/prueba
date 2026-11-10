@@ -1,115 +1,274 @@
-<!-- Landing Early Access 2026 · Honimunn · versión para WordPress (bloque HTML personalizado) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@900&display=swap">
+<!-- Landing Early Access · Honimunn · para pegar en un bloque «HTML personalizado» de WordPress -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
 <style>
-.hm-ea{
-  --crema:#f7f6ed; --negro:#000; --tinta:#111; --texto:#444; --gris:#666;
-  --tarjeta:#fff; --borde:#e6e2d5; --divisor:#eae7dc; --pie-txt:#cfccc0;
-  --f-body:'Outfit',Helvetica,Arial,sans-serif;
-  --f-logo:'Playfair Display',Georgia,'Times New Roman',serif;
-  color-scheme:light;
+.hm-ea{--crema:#f7f6ed;--negro:#000;--pie:#0a0a0a;--tinta:#111;--texto:#444;--gris:#5f5c52;--gris-claro:#a8a598;--pie-txt:#cfccc0;--tarjeta:#fff;--borde:#e6e2d5;--linea:#d9d5c7;--foto:#dedacb;--f:'Outfit',Helvetica,Arial,sans-serif;color-scheme:light!important}
+.hm-ea,.hm-ea *{box-sizing:border-box!important}
+html{scroll-behavior:smooth}
+.hm-ea{margin:0!important;background:var(--crema)!important;color:var(--tinta)!important;font-family:var(--f)!important;font-size:17px!important;line-height:1.6!important;-webkit-font-smoothing:antialiased!important}
+.hm-ea a{color:inherit!important}
+.hm-ea img{display:block!important;max-width:100%!important}
+.hm-ea :focus-visible{outline:2px solid currentColor!important;outline-offset:3px!important}
+.hm-ea .wrap{max-width:1200px!important;margin:0 auto!important}
+.hm-ea section{padding-left:max(20px,4.5vw)!important;padding-right:max(20px,4.5vw)!important}
+.hm-ea .eyebrow{margin:0 0 12px!important;font-size:13px!important;font-weight:600!important;letter-spacing:2px!important;text-transform:uppercase!important;color:var(--gris)!important}
+.hm-ea h1,.hm-ea h2,.hm-ea h3{margin:0!important;font-weight:300!important;text-wrap:balance!important}
+.hm-ea h2{font-size:clamp(34px,4.5vw,52px)!important;line-height:1.1!important;letter-spacing:-1px!important}
+.hm-ea .lead{margin:16px 0 44px!important;max-width:620px!important;font-size:18px!important;color:var(--texto)!important}
+.hm-ea .btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:56px!important;padding:0 32px!important;border-radius:40px!important;font-weight:600!important;font-size:17px!important;text-decoration:none!important;transition:transform .15s!important}
+.hm-ea .btn:hover{transform:translateY(-2px)!important}
+.hm-ea .btn-claro{background:var(--crema)!important;color:var(--negro)!important}
+.hm-ea .btn-borde{border:1px solid #5a5850!important;color:var(--crema)!important;font-weight:500!important}
+.hm-ea .btn-negro{background:var(--negro)!important;color:var(--crema)!important}
+.hm-ea .foto{position:relative!important;background:var(--foto)!important;color:var(--gris)!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:16px!important;font-size:14px!important;overflow:hidden!important}
+.hm-ea .foto img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important}
+.hm-ea .hero{background:var(--negro)!important;color:var(--crema)!important;padding-top:96px!important;padding-bottom:112px!important}
+.hm-ea .hero .wrap{display:flex!important;flex-wrap:wrap!important;gap:56px!important;align-items:center!important}
+.hm-ea .hero-txt{flex:1 1 460px!important;min-width:0!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:24px!important}
+.hm-ea .pill{border:1px solid var(--crema)!important;border-radius:30px!important;padding:7px 16px!important;font-size:12px!important;font-weight:500!important;letter-spacing:2px!important;text-transform:uppercase!important}
+.hm-ea .hero h1{font-size:clamp(44px,6.5vw,76px)!important;line-height:1.04!important;letter-spacing:-2px!important}
+.hm-ea .hero h1 strong{font-weight:600!important}
+.hm-ea .hero p{margin:0!important;max-width:520px!important;font-size:19px!important;color:var(--pie-txt)!important}
+.hm-ea .cuenta-tit{font-size:12px!important;font-weight:500!important;letter-spacing:2px!important;text-transform:uppercase!important;color:var(--gris-claro)!important;margin-bottom:10px!important}
+.hm-ea .cuenta{display:flex!important;flex-wrap:wrap!important;gap:10px!important}
+.hm-ea .cuenta div{width:84px!important;border:1px solid #3a3934!important;border-radius:14px!important;padding:14px 0 12px!important;text-align:center!important}
+.hm-ea .cuenta b{display:block!important;font-size:36px!important;line-height:1!important;font-weight:300!important;font-variant-numeric:tabular-nums!important}
+.hm-ea .cuenta span{display:block!important;margin-top:6px!important;font-size:11px!important;letter-spacing:1.5px!important;text-transform:uppercase!important;color:var(--gris-claro)!important}
+.hm-ea .botones{display:flex!important;flex-wrap:wrap!important;gap:12px!important;margin-top:8px!important}
+.hm-ea .hero .foto{flex:1 1 400px!important;aspect-ratio:4/5!important;max-height:620px!important;border-radius:24px!important;background:#1c1b18!important;border:1px dashed #4a4943!important;color:var(--gris-claro)!important}
+.hm-ea .blk{padding-top:112px!important;padding-bottom:112px!important}
+.hm-ea .tramos{display:flex!important;flex-wrap:wrap!important;gap:20px!important}
+.hm-ea .tramo{flex:1 1 280px!important;background:var(--tarjeta)!important;border:1px solid var(--borde)!important;border-radius:20px!important;padding:36px 32px!important}
+.hm-ea .tramo .de{font-size:15px!important;color:var(--gris)!important}
+.hm-ea .tramo .cifra{margin-top:14px!important;font-size:64px!important;line-height:1!important;font-weight:500!important;letter-spacing:-2px!important}
+.hm-ea .tramo .dto{margin-top:8px!important;color:var(--texto)!important}
+.hm-ea .tramo.top{background:var(--negro)!important;border-color:var(--negro)!important;color:var(--crema)!important}
+.hm-ea .tramo.top .de,.hm-ea .tramo.top .dto{color:var(--pie-txt)!important}
+.hm-ea .blanco{background:var(--tarjeta)!important;border-top:1px solid var(--borde)!important;border-bottom:1px solid var(--borde)!important}
+.hm-ea .pasos{display:flex!important;flex-wrap:wrap!important;gap:40px!important;margin-top:44px!important}
+.hm-ea .paso{flex:1 1 260px!important;display:flex!important;flex-direction:column!important;gap:14px!important}
+.hm-ea .paso .n{width:48px!important;height:48px!important;border-radius:50%!important;background:var(--negro)!important;color:var(--crema)!important;display:grid!important;place-items:center!important;font-size:20px!important;font-weight:500!important}
+.hm-ea .paso h3{font-size:22px!important;font-weight:600!important}
+.hm-ea .paso p{margin:0!important;color:var(--texto)!important}
+.hm-ea .plazos{margin-top:48px!important;background:var(--crema)!important;border-radius:16px!important;padding:24px 28px!important}
+.hm-ea .plazos p{margin:0!important}
+.hm-ea .reservar{background:var(--negro)!important;color:var(--crema)!important}
+.hm-ea .reservar .wrap{display:flex!important;flex-wrap:wrap!important;gap:56px!important;align-items:center!important}
+.hm-ea .reservar .izq{flex:1 1 340px!important;display:flex!important;flex-direction:column!important;gap:20px!important;align-items:flex-start!important}
+.hm-ea .reservar .eyebrow{color:var(--gris-claro)!important;margin:0!important}
+.hm-ea .reservar h2{font-size:clamp(36px,4.8vw,56px)!important}
+.hm-ea .reservar p{margin:0!important;font-size:18px!important;color:var(--pie-txt)!important}
+.hm-ea .checks{list-style:none!important;margin:8px 0 0!important;padding:0!important;display:grid!important;gap:14px!important}
+.hm-ea .checks li{display:flex!important;gap:12px!important;align-items:center!important}
+.hm-ea .checks svg{flex:0 0 22px!important}
+.hm-ea .wa{color:var(--pie-txt)!important}
+.hm-ea .caja{flex:1 1 420px!important;background:var(--tarjeta)!important;color:var(--tinta)!important;border-radius:24px!important;padding:44px!important;display:flex!important;flex-direction:column!important;gap:18px!important;align-items:flex-start!important}
+.hm-ea .caja h3{font-size:28px!important;font-weight:500!important}
+.hm-ea .caja p{margin:0!important;color:var(--texto)!important;font-size:16px!important}
+.hm-ea .caja .btn{width:100%!important}
+.hm-ea .caja .nota{font-size:13px!important;color:var(--gris)!important}
+.hm-ea .viajes{display:flex!important;flex-wrap:wrap!important;gap:20px!important;margin-top:44px!important}
+.hm-ea .viaje{flex:1 1 300px!important;min-width:0!important;background:var(--tarjeta)!important;border:1px solid var(--borde)!important;border-radius:20px!important;overflow:hidden!important;text-decoration:none!important;display:flex!important;flex-direction:column!important;transition:transform .15s!important}
+.hm-ea .viaje:hover{transform:translateY(-3px)!important}
+.hm-ea .viaje .foto{aspect-ratio:4/3!important}
+.hm-ea .viaje .info{padding:24px 26px 28px!important;display:flex!important;flex-direction:column!important;gap:8px!important}
+.hm-ea .viaje .zona{font-size:12px!important;font-weight:600!important;letter-spacing:2px!important;text-transform:uppercase!important;color:var(--gris)!important}
+.hm-ea .viaje .nombre{font-size:22px!important;font-weight:600!important;line-height:1.25!important}
+.hm-ea .viaje .precio{color:var(--texto)!important;font-size:16px!important}
+.hm-ea .aviso{margin:20px 0 0!important;font-size:14px!important;color:var(--gris)!important}
+.hm-ea .testi{padding-bottom:0!important}
+.hm-ea .testi .wrap{background:var(--negro)!important;color:var(--crema)!important;border-radius:28px!important;padding:clamp(36px,6vw,80px)!important}
+.hm-ea .testi .comillas{font-size:96px!important;line-height:.6!important;font-weight:300!important;color:#5a5850!important}
+.hm-ea .testi blockquote{margin:16px 0 28px!important;max-width:860px!important;font-size:clamp(22px,2.6vw,32px)!important;line-height:1.4!important;font-weight:300!important}
+.hm-ea .testi cite{font-style:normal!important;color:var(--pie-txt)!important}
+.hm-ea .faq .wrap{max-width:860px!important}
+.hm-ea .faq h2{margin-bottom:32px!important}
+.hm-ea .faq-lista{border-top:1px solid var(--linea)!important}
+.hm-ea details{border-bottom:1px solid var(--linea)!important}
+.hm-ea summary{list-style:none!important;cursor:pointer!important;display:flex!important;justify-content:space-between!important;align-items:center!important;gap:16px!important;min-height:64px!important;padding:18px 0!important;font-size:19px!important;font-weight:500!important}
+.hm-ea summary::-webkit-details-marker{display:none!important}
+.hm-ea summary::after{content:"+"!important;font-size:26px!important;font-weight:300!important;color:var(--gris)!important}
+.hm-ea details[open] summary::after{content:"−"!important}
+.hm-ea details p{margin:0 0 22px!important;color:var(--texto)!important}
+.hm-ea .volver{text-align:center!important;padding-bottom:40px!important}
+.hm-ea .cond{padding-bottom:56px!important}
+.hm-ea .legal{margin:0 auto!important;max-width:860px!important;font-size:12px!important;color:var(--gris)!important;text-align:center!important}
+@media (max-width:600px){
+.hm-ea .hero{padding-top:56px!important;padding-bottom:64px!important}
+.hm-ea .blk{padding-top:72px!important;padding-bottom:72px!important}
+.hm-ea .caja{padding:28px!important}
+.hm-ea .cuenta div{width:70px!important}
+.hm-ea .cuenta b{font-size:30px!important}
+.hm-ea .tramo .cifra{font-size:52px!important}
 }
-.hm-ea,.hm-ea *{box-sizing:border-box}
-.hm-ea{background:var(--crema);color:var(--tinta);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.hm-ea a{color:inherit}
-.hm-ea :focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
-.hm-ea .wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.hm-ea h1,.hm-ea h2,.hm-ea h3,.hm-ea h1 strong,.hm-ea p,.hm-ea li,.hm-ea summary,.hm-ea a,.hm-ea blockquote,.hm-ea cite{font-family:var(--f)!important;text-transform:none}
+.hm-ea h1,.hm-ea h2,.hm-ea h3,.hm-ea h1 strong{color:inherit!important}
+.hm-ea .checks li::before{display:none!important}
+/* Ocultar el título automático de la página de WordPress («Black Friday») */
+.page-title,.entry-title,.page-header,.entry-header,.m-page-title,.o-page-title,.l-page-title{display:none!important}
 
-.hm-ea .logo{font-family:var(--f-logo);font-weight:900;font-size:28px;letter-spacing:-.6px;line-height:1;text-decoration:none}
-
-/* Portada */
-.hm-ea .hero{background:var(--negro);color:var(--crema);padding:72px 0 88px}
-.hm-ea .eyebrow{display:inline-block;border:1px solid var(--crema);border-radius:30px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;margin-bottom:22px}
-.hm-ea .hero h1{font-size:clamp(34px,6vw,60px);line-height:1.08;letter-spacing:-1px;font-weight:700;margin:0 0 22px;max-width:16ch;text-wrap:balance}
-.hm-ea .hero p{margin:0 0 34px;max-width:52ch;color:var(--pie-txt);font-size:18px}
-
-/* Botón */
-.hm-ea .cta{display:inline-block;background:var(--tinta);color:#fff;text-decoration:none;border:0;border-radius:30px;padding:16px 34px;font-weight:700;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;transition:transform .15s;cursor:pointer;white-space:nowrap}
-.hm-ea .cta:hover{transform:translateY(-2px)}
-.hm-ea .cta.claro{background:var(--crema);color:var(--tinta)}
-
-/* Secciones */
-.hm-ea section.blk{padding:80px 0}
-.hm-ea .blk h2{font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.5px;margin:0 0 14px;text-wrap:balance}
-.hm-ea .blk .lead{margin:0 0 40px;max-width:60ch;color:var(--texto)}
-.hm-ea .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.hm-ea .card{background:var(--tarjeta);border:1px solid var(--borde);border-radius:18px;padding:28px 26px}
-.hm-ea .card .n{width:34px;height:34px;border-radius:50%;background:var(--tinta);color:#fff;display:grid;place-items:center;font-weight:600;font-size:14px;margin-bottom:16px}
-.hm-ea .card h3{margin:0 0 8px;font-size:19px;line-height:1.3}
-.hm-ea .card p{margin:0;color:var(--texto);font-size:16px}
-.hm-ea .alt{background:#efede1}
-
-/* Formulario */
-.hm-ea #formulario{scroll-margin-top:20px}
-.hm-ea .solo-enlace{text-align:center}
-.hm-ea .solo-enlace .lead{margin-left:auto;margin-right:auto}
-
-/* Pie */
-.hm-ea footer{background:var(--negro);color:var(--pie-txt);padding:44px 0;font-size:14px;text-align:center}
-.hm-ea footer .logo{color:var(--crema);font-size:24px;display:inline-block;margin-bottom:12px}
-.hm-ea footer p{margin:4px 0}
-
-@media (max-width:760px){
-  .hm-ea .grid3{grid-template-columns:1fr}
-  .hm-ea .hero{padding:52px 0 64px}
-  .hm-ea section.blk{padding:60px 0}
-}
-
-.hm-ea h1,.hm-ea h2,.hm-ea h3{font-family:var(--f-body);color:inherit;text-transform:none}
-.hm-ea a.cta{text-decoration:none}
-.hm-ea .hero h1,.hm-ea .hero p{color:inherit}
-.hm-ea .hero p{color:var(--pie-txt)}
 </style>
 <div class="hm-ea">
-
-
+<!-- ============ PORTADA ============ -->
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Early Access 2026</span>
-    <h1>Vuestra luna de miel de 2026, pensada con tiempo</h1>
-    <p>Abrimos antes la agenda de 2026 para las parejas que quieren empezar ya. Contadnos cuándo os casáis y qué os apetece, y nos ponemos con ello.</p>
-    <a class="cta claro" href="https://app.honimunn.com/contacto/early-access-2026-es">Apuntarme al Early Access</a>
+    <div class="hero-txt">
+      <span class="pill">Early Access · 16 al 23 de noviembre</span>
+      <h1>Vuestra luna de miel, con hasta <strong>1.000 € menos</strong>.</h1>
+      <p>Los descuentos más grandes que hemos hecho nunca. Bloqueadlo hoy con un depósito de 500 €, 100 % reembolsable, y diseñamos el viaje con calma.</p>
+      <div>
+        <div class="cuenta-tit" id="cuenta-tit">El Early Access empieza en</div>
+        <div class="cuenta">
+          <div><b id="c-d">00</b><span>días</span></div>
+          <div><b id="c-h">00</b><span>horas</span></div>
+          <div><b id="c-m">00</b><span>min</span></div>
+          <div><b id="c-s">00</b><span>seg</span></div>
+        </div>
+      </div>
+      <div class="botones">
+        <a class="btn btn-claro js-form" href="#">Bloquear mi descuento</a>
+        <a class="btn btn-borde" href="#como-funciona">Cómo funciona</a>
+      </div>
+    </div>
+    <!-- FOTO: subid la foto a la misma carpeta con el nombre hero.jpg -->
+    <div class="foto">[FOTO HERO: pareja en destino, vertical]<img src="hero.jpg" alt="" onerror="this.remove()"></div>
   </div>
 </section>
 
+<!-- ============ DESCUENTOS ============ -->
 <section class="blk">
   <div class="wrap">
-    <h2>Por qué conviene empezar pronto</h2>
-    <p class="lead">Las bodas se concentran en unos pocos meses, y los viajes de después también. Quien reserva antes elige; quien llega tarde se adapta a lo que queda.</p>
-    <div class="grid3">
-      <div class="card"><h3>Más opciones de vuelo y hotel</h3><p>En temporada alta, los alojamientos pequeños y los vuelos con buen horario son lo primero que se agota.</p></div>
-      <div class="card"><h3>Margen para ajustar</h3><p>Con tiempo podemos probar rutas, cambiar el orden de las etapas o mover fechas sin prisas.</p></div>
-      <div class="card"><h3>Una cosa menos antes de la boda</h3><p>El viaje queda encarrilado mientras os ocupáis de todo lo demás.</p></div>
+    <p class="eyebrow">Los descuentos</p>
+    <h2>Cuanto más grande el viaje, más ahorráis.</h2>
+    <p class="lead">El descuento es por reserva, no por persona: se aplica al precio total de vuestro viaje.</p>
+    <div class="tramos">
+      <div class="tramo"><div class="de">Viajes desde 5.000 €</div><div class="cifra">350 €</div><div class="dto">de descuento</div></div>
+      <div class="tramo"><div class="de">Viajes desde 7.500 €</div><div class="cifra">750 €</div><div class="dto">de descuento</div></div>
+      <div class="tramo top"><div class="de">Viajes desde 10.000 €</div><div class="cifra">1.000 €</div><div class="dto">de descuento</div></div>
     </div>
   </div>
 </section>
 
-<section class="blk alt">
+<!-- ============ CÓMO FUNCIONA ============ -->
+<section class="blk blanco" id="como-funciona">
   <div class="wrap">
-    <h2>Cómo funciona</h2>
-    <p class="lead">Tres pasos, sin compromiso hasta que tengáis una propuesta que os convenza.</p>
-    <div class="grid3">
-      <div class="card"><div class="n">1</div><h3>Rellenáis el formulario</h3><p>Fechas aproximadas, presupuesto orientativo y lo que os gustaría vivir.</p></div>
-      <div class="card"><div class="n">2</div><h3>Os contactamos</h3><p>Una persona del equipo revisa vuestras respuestas y os escribe para concretar.</p></div>
-      <div class="card"><div class="n">3</div><h3>Diseñamos vuestro viaje</h3><p>Preparamos un itinerario a medida, con la logística resuelta y explicada.</p></div>
+    <p class="eyebrow">Cómo funciona</p>
+    <h2>Bloqueáis el precio ahora. Decidís con calma.</h2>
+    <div class="pasos">
+      <div class="paso"><div class="n">1</div><h3>Contadnos vuestra idea</h3><p>Rellenáis un formulario corto con fechas, presupuesto y qué os apetece. Un agente os escribe en menos de [24 h].</p></div>
+      <div class="paso"><div class="n">2</div><h3>Bloqueáis el descuento con 500 €</h3><p>Pagáis un depósito de 500 € antes del lunes 23 y el descuento queda guardado para vosotros. Es 100 % reembolsable.</p></div>
+      <div class="paso"><div class="n">3</div><h3>Diseñamos el viaje juntos</h3><p>Tenéis hasta el 10 de diciembre para confirmar. Si al final no reserváis, os devolvemos el depósito.</p></div>
+    </div>
+    <div class="plazos"><p><strong>¿Preferís pagarlo a plazos?</strong> También podéis financiar vuestro viaje. [CONDICIONES: meses, entidad, interés]</p></div>
+  </div>
+</section>
+
+<!-- ============ IR AL FORMULARIO ============ -->
+<section class="blk reservar" id="reservar">
+  <div class="wrap">
+    <div class="izq">
+      <p class="eyebrow">Bloquead vuestro descuento</p>
+      <h2>Contadnos vuestra idea.</h2>
+      <p>Rellenad el formulario y un agente os contacta en menos de [24 h] para explicaros el depósito y empezar a diseñar vuestro viaje.</p>
+      <ul class="checks">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f7f6ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sin compromiso</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f7f6ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Depósito de 500 €, 100 % reembolsable</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f7f6ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Solo hasta el lunes 23 de noviembre</li>
+      </ul>
+      <a class="wa" id="wa" href="#" hidden>¿Preferís hablar ya? Escribidnos por WhatsApp</a>
+    </div>
+    <div class="caja">
+      <h3>Formulario Early Access</h3>
+      <p>Nombre, contacto, destino, fechas y presupuesto. Son un par de minutos.</p>
+      <a class="btn btn-negro js-form" href="#">Quiero bloquear mi descuento</a>
+      <p class="nota">No se paga nada al enviar el formulario.</p>
     </div>
   </div>
 </section>
 
-<section class="blk" id="formulario">
+<!-- ============ IDEAS DE VIAJE ============ -->
+<section class="blk">
   <div class="wrap">
-    <div class="solo-enlace">
-      <h2>Apuntaos al Early Access 2026</h2>
-      <p class="lead">Son unos minutos. Os respondemos personalmente.</p>
-      <a class="cta" href="https://app.honimunn.com/contacto/early-access-2026-es">Ir al formulario</a>
+    <p class="eyebrow">Ideas para empezar</p>
+    <h2>Tres viajes que ya hemos diseñado.</h2>
+    <div class="viajes">
+      <a class="viaje js-form" href="#">
+        <div class="foto">[FOTO: Cataratas Victoria, Sudáfrica y Mauricio]<img src="viaje-1.jpg" alt="" onerror="this.remove()"></div>
+        <div class="info"><span class="zona">África</span><span class="nombre">Cataratas Victoria, Sudáfrica y Mauricio</span><span class="precio">16 días · desde <strong>5.000 €</strong> por persona</span></div>
+      </a>
+      <a class="viaje js-form" href="#">
+        <div class="foto">[FOTO: Polinesia Francesa]<img src="viaje-2.jpg" alt="" onerror="this.remove()"></div>
+        <div class="info"><span class="zona">Oceanía</span><span class="nombre">Polinesia Francesa</span><span class="precio">15 días · desde <strong>7.950 €</strong> por persona</span></div>
+      </a>
+      <a class="viaje js-form" href="#">
+        <div class="foto">[FOTO: Alaska y Hawái]<img src="viaje-3.jpg" alt="" onerror="this.remove()"></div>
+        <div class="info"><span class="zona">América</span><span class="nombre">Alaska y Hawái</span><span class="precio">23 días · desde <strong>9.000 €</strong> por persona</span></div>
+      </a>
+    </div>
+    <p class="aviso">Precios orientativos por persona a [FECHA DE REVISIÓN]. Cada viaje se adapta a vuestras fechas y gustos.</p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIO ============ -->
+<section class="blk testi">
+  <div class="wrap">
+    <div class="comillas" aria-hidden="true">“</div>
+    <blockquote>[TESTIMONIO REAL de una pareja, con su permiso: dos o tres frases sobre su viaje con Honimunn]</blockquote>
+    <cite>[Nombres] · [Destino], [año]</cite>
+  </div>
+</section>
+
+<!-- ============ PREGUNTAS ============ -->
+<section class="blk faq">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-lista">
+      <details open><summary>¿El descuento es por persona o por reserva?</summary><p>Por reserva. Se aplica al precio total del viaje: 350 € desde 5.000 €, 750 € desde 7.500 € y 1.000 € desde 10.000 €.</p></details>
+      <details><summary>¿Qué pasa si al final no reservamos?</summary><p>Os devolvemos el depósito de 500 €. Es 100 % reembolsable.</p></details>
+      <details><summary>¿Hasta cuándo tenemos para decidir?</summary><p>El depósito se hace entre el 16 y el 23 de noviembre. Después tenéis hasta el 10 de diciembre para confirmar el viaje.</p></details>
+      <details><summary>¿Sirve para cualquier destino y fecha de viaje?</summary><p>[RESPUESTA: destinos y fechas de viaje incluidos]</p></details>
+      <details><summary>¿Se puede financiar?</summary><p>Sí. [CONDICIONES: meses, entidad, interés]</p></details>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <a class="logo" href="https://honimunn.com">Honimunn</a>
-    <p>Madrid · Barcelona · Valencia · Ciudad de México</p>
-    <p><a href="https://honimunn.com">honimunn.com</a></p>
-  </div>
-</footer>
+<section class="volver">
+  <a class="btn btn-negro js-form" href="#">Ir al formulario</a>
+</section>
+
+<!-- ============ CONDICIONES ============ -->
+<section class="cond">
+  <div class="wrap"><p class="legal">Promoción válida para reservas con depósito realizado entre el 16 y el 23 de noviembre de 2026. Descuento por reserva según el importe total del viaje. Depósito de 500 € 100 % reembolsable. [BASES LEGALES / CONDICIONES COMPLETAS]</p></div>
+</section>
+
+<script>
+/* =====================================================================
+   AJUSTES (lo único que normalmente hay que tocar)
+   ===================================================================== */
+var FORMULARIO_URL = "https://app.honimunn.com/contacto/early-access-2026-es";
+var WHATSAPP = "";   // Ej.: "34600000000" (con 34 delante, sin espacios ni +). Vacío = no se muestra.
+var INICIO = "2026-11-16T00:00:00+01:00";   // Empieza el Early Access (hora de Madrid)
+var FIN    = "2026-11-23T23:59:59+01:00";   // Termina el Early Access (hora de Madrid)
+
+/* --- A partir de aquí no hace falta tocar nada --- */
+document.querySelectorAll(".js-form").forEach(function(a){ a.href = FORMULARIO_URL; });
+if (WHATSAPP) { var wa = document.getElementById("wa"); wa.href = "https://wa.me/" + WHATSAPP; wa.hidden = false; }
+
+(function(){
+  var ini = new Date(INICIO).getTime(), fin = new Date(FIN).getTime();
+  var tit = document.getElementById("cuenta-tit");
+  function dos(n){ return (n < 10 ? "0" : "") + n; }
+  function tic(){
+    var ahora = Date.now(), meta = ahora;
+    if (ahora < ini) { meta = ini; tit.textContent = "El Early Access empieza en"; }
+    else if (ahora < fin) { meta = fin; tit.textContent = "El Early Access termina en"; }
+    else { tit.textContent = "El Early Access ha terminado"; }
+    var s = Math.max(0, Math.floor((meta - ahora) / 1000));
+    document.getElementById("c-d").textContent = dos(Math.floor(s / 86400));
+    document.getElementById("c-h").textContent = dos(Math.floor(s % 86400 / 3600));
+    document.getElementById("c-m").textContent = dos(Math.floor(s % 3600 / 60));
+    document.getElementById("c-s").textContent = dos(s % 60);
+  }
+  tic(); setInterval(tic, 1000);
+})();
+</script>
 </div>
