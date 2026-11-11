@@ -3,14 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>HoniClub</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="HoniClub, el programa de referidos de Honimunn: recomendad Honimunn y ganáis los dos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@900&display=swap">
 <style>
-/* Layout: editorial a sangre, como el dossier. Portada de foto, bloques mitad foto / mitad crema, etiquetas en píldora negra y un único acento: el degradado lima-amarillo de "Vosotros / Vuestros amigos". Un solo look claro a propósito (colores de marca). */
 :root{
   --crema:#f7f5ec;
   --crema-2:#efece0;
@@ -66,11 +62,6 @@ p{margin:0}
   .duo-txt{grid-template-columns:1fr;gap:14px}
   .duo-txt p:last-child{text-align:left}
 }
-
-/* ---------- Intro ---------- */
-.intro{padding-block:clamp(56px,8vw,104px)}
-.intro p{font-size:clamp(24px,3vw,38px);line-height:1.22;letter-spacing:-.02em;font-weight:300;max-width:26ch}
-.intro b{font-weight:700}
 
 /* ---------- Bloques foto / texto ---------- */
 .split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--crema)}
@@ -162,14 +153,6 @@ details p{padding:0 0 24px;color:var(--texto);max-width:60ch}
 .cierre .nota{margin-top:40px;font-size:18px;max-width:44ch;color:#ece9de}
 .cierre .nota b{font-weight:600;color:var(--blanco)}
 
-footer{background:var(--tinta);color:#cfccc0;padding-block:44px;font-size:15px}
-.pie{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
-.pie .logo{font-family:var(--f-logo);font-weight:900;font-size:30px;color:var(--crema);letter-spacing:-.02em;line-height:1}
-.pie .logo small{display:block;font-family:var(--f-txt);font-weight:500;font-size:11px;letter-spacing:.25em;text-transform:uppercase;margin-top:8px;color:#cfccc0}
-.pie nav{display:flex;flex-wrap:wrap;gap:8px 24px}
-.pie a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-.pie .sedes{width:100%;border-top:1px solid #2b2a26;padding-top:20px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
-
 /* Entrada suave: parte siempre de un estado visible */
 @media (prefers-reduced-motion:no-preference){
   .hero h1,.hero .lema,.duo,.duo-txt{animation:sube .9s cubic-bezier(.2,.7,.2,1) both}
@@ -206,10 +189,6 @@ footer{background:var(--tinta);color:#cfccc0;padding-block:44px;font-size:15px}
 </header>
 
 <main>
-  <section class="intro wrap" aria-label="Qué es HoniClub">
-    <p>HoniClub es el programa de referidos de Honimunn. <b>Al reservar vuestro viaje ya formáis parte</b>, y cada pareja que llegue gracias a vosotros os suma saldo.</p>
-  </section>
-
   <section class="split" aria-labelledby="t-llevais">
     <div class="split-foto"><img src="img/atardecer.jpg" alt="Atardecer sobre un lago con volcanes, visto desde una terraza" loading="lazy"></div>
     <div class="split-txt">
@@ -326,17 +305,6 @@ footer{background:var(--tinta);color:#cfccc0;padding-block:44px;font-size:15px}
     </div>
   </section>
 </main>
-
-<footer>
-  <div class="wrap pie">
-    <div class="logo">Honimunn<small>El amor en formato viaje</small></div>
-    <nav aria-label="Enlaces">
-      <a href="https://honimunn.com" target="_blank" rel="noopener">honimunn.com</a>
-      <a href="#bases" id="bases">Bases completas de HoniClub</a>
-    </nav>
-    <div class="sedes">Madrid · Barcelona · Valencia · Ciudad de México</div>
-  </div>
-</footer>
 
 <script>
 (function(){
