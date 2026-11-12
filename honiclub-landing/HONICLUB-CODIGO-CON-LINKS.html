@@ -73,7 +73,7 @@
 .hc .calc-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
 .hc .calc-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)!important}
 .hc .step{display:flex;align-items:center;gap:6px;background:var(--crema);border-radius:999px;padding:4px}
-.hc .step button{width:34px!important;height:34px!important;min-width:0!important;min-height:0!important;border-radius:50%!important;background:var(--tinta)!important;color:var(--crema)!important;font-size:19px!important;line-height:1!important;font-weight:400!important;display:grid!important;place-items:center;cursor:pointer;padding:0!important}
+.hc .step button{width:34px!important;height:34px!important;min-width:0!important;min-height:0!important;border-radius:50%!important;background:var(--tinta)!important;color:var(--crema)!important;font-size:19px!important;line-height:1!important;font-weight:400!important;display:grid!important;place-items:center;cursor:pointer;padding:0!important;border:0!important;outline:0;box-shadow:none!important}
 .hc .step button:disabled{opacity:.25;cursor:default}
 .hc .step output{min-width:92px;text-align:center;font-weight:600;font-size:15px;color:var(--tinta)}
 .hc .res{font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums;color:var(--tinta)}
@@ -260,7 +260,7 @@
   var fmt=new Intl.NumberFormat('es-ES');
   function pinta(){
     num.textContent=n+(n===1?' pareja':' parejas');
-    res.firstChild.nodeValue='de '+fmt.format(n*100)+' a '+fmt.format(n*300)+' €';
+    res.firstChild.nodeValue='de '+fmt.format(n*100)+' a '+fmt.format(n*300)+' \u20AC';
     barra.style.width=Math.max(5,n/MAX*100)+'%';
     menos.disabled=n<=1;mas.disabled=n>=MAX;
   }
