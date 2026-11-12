@@ -64,13 +64,24 @@ html,body{overflow-x:clip}
 .hm-sel .banner{width:100vw!important;max-width:100vw!important;margin:0 0 28px calc(50% - 50vw)!important;border-radius:0!important}
 .hm-sel.con-banner .pill,.hm-sel.con-banner .oferta{display:none!important}
 @media (max-width:600px){.hm-sel .banner{margin-bottom:20px!important}}
+/* Cuenta atrás más grande en ordenador */
+@media (min-width:601px){
+.hm-sel .cuenta-tit{font-size:14px!important;margin-bottom:14px!important}
+.hm-sel .cuenta{gap:14px!important}
+.hm-sel .cuenta div{width:110px!important;padding:18px 0 14px!important;border-radius:16px!important}
+.hm-sel .cuenta b{font-size:48px!important}
+.hm-sel .cuenta span{font-size:12px!important;margin-top:8px!important}
+}
 /* Ocultar el título automático de la página de WordPress */
 .page-title,.entry-title,.page-header,.entry-header,.m-page-title,.o-page-title,.l-page-title{display:none!important}
 </style>
 <div class="hm-sel" id="sel-raiz">
   <div class="wrap">
     <!-- ============ BANNER Y CUENTA ATRÁS ============ -->
-    <img class="banner" id="sel-banner" src="https://honimunn.com/wp-content/uploads/2026/11/Bunner-EA_Espana-3-scaled.png" alt="Early Access Honimunn" onerror="this.remove()">
+    <picture id="sel-picture">
+      <source id="sel-banner-movil" media="(max-width:600px)" srcset="https://honimunn.com/wp-content/uploads/2026/11/Bunner-EA_Espana-4-scaled.png">
+      <img class="banner" id="sel-banner" src="https://honimunn.com/wp-content/uploads/2026/11/Bunner-EA_Espana-3-scaled.png" alt="Early Access Honimunn" onerror="this.remove()">
+    </picture>
     <span class="pill" id="sel-campana">Early Access · hasta el 23 de noviembre</span>
     <p class="oferta" id="sel-oferta">Hasta <strong>1.000 € / 20,000 MXN de descuento</strong> en vuestra luna de miel. Bloqueadlo con un depósito 100 % reembolsable.</p>
     <div class="cuenta-tit" id="sel-cuenta-tit">El Early Access termina en</div>
@@ -117,6 +128,11 @@ var BANNERS = {
   es: { earlyaccess: "https://honimunn.com/wp-content/uploads/2026/11/Bunner-EA_Espana-3-scaled.png", blackfriday: "" },
   mx: { earlyaccess: "", blackfriday: "" }
 };
+// Banner para móvil. Si dejáis uno vacío (""), en móvil se usa el de arriba.
+var BANNERS_MOVIL = {
+  es: { earlyaccess: "https://honimunn.com/wp-content/uploads/2026/11/Bunner-EA_Espana-4-scaled.png", blackfriday: "" },
+  mx: { earlyaccess: "", blackfriday: "" }
+};
 // Frase de la oferta según país y campaña
 var OFERTA = {
   es: { earlyaccess: "Hasta <strong>1.000 € / 20,000 MXN de descuento</strong> en vuestra luna de miel. Bloqueadlo con un depósito 100 % reembolsable.",
@@ -156,9 +172,12 @@ var FECHAS = {
   if (banner) {
     if (src) {
       banner.src = src;
+      var movil = document.getElementById("sel-banner-movil");
+      var srcMovil = BANNERS_MOVIL[pais][f] || BANNERS_MOVIL.es[f];
+      if (movil) { if (srcMovil) { movil.srcset = srcMovil; } else { movil.remove(); } }
       document.getElementById("sel-raiz").classList.add("con-banner");   // El banner ya cuenta la oferta: se ocultan la etiqueta y la frase
       banner.addEventListener("error", function(){ document.getElementById("sel-raiz").classList.remove("con-banner"); });
-    } else { banner.remove(); }
+    } else { document.getElementById("sel-picture").remove(); }
   }
   var nombre = f === "earlyaccess" ? "Early Access" : "Black Friday";
   document.getElementById("sel-campana").textContent = f === "earlyaccess"
