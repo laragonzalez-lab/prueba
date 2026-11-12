@@ -60,10 +60,14 @@ html,body{overflow-x:clip}
 .hm-sel .cuenta b{font-size:24px!important}
 .hm-sel .separador{margin:32px auto 32px!important}
 }
+/* Banner a todo el ancho de la pantalla */
+.hm-sel .banner{width:100vw!important;max-width:100vw!important;margin:0 0 28px calc(50% - 50vw)!important;border-radius:0!important}
+.hm-sel.con-banner .pill,.hm-sel.con-banner .oferta{display:none!important}
+@media (max-width:600px){.hm-sel .banner{margin-bottom:20px!important}}
 /* Ocultar el título automático de la página de WordPress */
 .page-title,.entry-title,.page-header,.entry-header,.m-page-title,.o-page-title,.l-page-title{display:none!important}
 </style>
-<div class="hm-sel">
+<div class="hm-sel" id="sel-raiz">
   <div class="wrap">
     <!-- ============ BANNER Y CUENTA ATRÁS ============ -->
     <img class="banner" id="sel-banner" src="https://honimunn.com/wp-content/uploads/2026/11/Bunner-EA_Espana-2-scaled.png" alt="Early Access Honimunn" onerror="this.remove()">
@@ -149,7 +153,13 @@ var FECHAS = {
   var f = fase(pais);
   var banner = document.getElementById("sel-banner");
   var src = BANNERS[pais][f] || BANNERS.es[f];
-  if (banner) { if (src) { banner.src = src; } else { banner.remove(); } }
+  if (banner) {
+    if (src) {
+      banner.src = src;
+      document.getElementById("sel-raiz").classList.add("con-banner");   // El banner ya cuenta la oferta: se ocultan la etiqueta y la frase
+      banner.addEventListener("error", function(){ document.getElementById("sel-raiz").classList.remove("con-banner"); });
+    } else { banner.remove(); }
+  }
   var nombre = f === "earlyaccess" ? "Early Access" : "Black Friday";
   document.getElementById("sel-campana").textContent = f === "earlyaccess"
     ? "Early Access · hasta el 23 de noviembre"
