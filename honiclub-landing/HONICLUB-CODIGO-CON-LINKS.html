@@ -7,7 +7,7 @@
   --foto-atardecer:url("https://honimunn.com/wp-content/uploads/2026/11/Image-6-scaled.png");
   --foto-collage:url("https://honimunn.com/wp-content/uploads/2026/11/Group-5-1-scaled.png");
   --foto-saldo:url("https://honimunn.com/wp-content/uploads/2026/11/Group-6-scaled.png");
-  --foto-cierre:url("https://honimunn.com/wp-content/uploads/2026/11/Group-98-scaled.png");
+  --foto-cierre:url("https://honimunn.com/wp-content/uploads/2026/11/Dossier-Referidos-1-scaled.png");
 }
 /* ================================ */
 /* Oculta el título automático de WordPress solo en esta página */
@@ -47,8 +47,16 @@
 .hc .hero .w{position:relative;z-index:1;min-height:max(720px,88vh);display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding-top:150px;padding-bottom:56px}
 .hc .h1{font-size:clamp(48px,7vw,88px);font-weight:800;line-height:.95;letter-spacing:-.04em;color:#fff!important}
 .hc .lema{margin-top:10px;font-size:clamp(22px,2.8vw,34px);line-height:1.12;letter-spacing:-.02em;color:#fff!important;font-weight:400}
-.hc .duo{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px}
-.hc .duo p{margin-top:12px;font-size:17px;line-height:1.35;color:#fff!important}
+.hc .duo{display:grid;grid-template-columns:auto 1fr auto;align-items:center}
+.hc .duo .pill-g{font-size:clamp(20px,2.4vw,30px);padding:.45em 1em .5em;white-space:nowrap}
+.hc .hilo{position:relative;height:1.5px;background:rgba(255,255,255,.9);transform-origin:left;animation:hc-hilo 1.2s .3s cubic-bezier(.6,0,.2,1) both}
+.hc .hilo::before,.hc .hilo::after{content:"";position:absolute;top:50%;width:7px;height:7px;border-radius:50%;background:#fff;transform:translateY(-50%)}
+.hc .hilo::before{left:0}.hc .hilo::after{right:0}
+@keyframes hc-hilo{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.hc .hilo{animation:none}}
+.hc .duo-txt{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:20px}
+.hc .duo-txt p{font-size:clamp(17px,1.7vw,22px);line-height:1.3;color:#fff!important}
+.hc .duo-txt p:last-child{text-align:right;justify-self:end;max-width:26ch}
 
 /* Bloques mitad foto, mitad texto */
 .hc .split{display:grid;grid-template-columns:1fr 1fr;background:var(--crema)}
@@ -122,7 +130,12 @@
 }
 @media (max-width:560px){
   .hc .hero .w{min-height:600px;padding-top:120px}
-  .hc .duo{grid-template-columns:1fr;gap:18px}
+  .hc .duo{grid-template-columns:1fr;justify-items:start}
+  .hc .hilo{width:1.5px;height:28px;margin-left:30px;transform-origin:top}
+  .hc .hilo::before,.hc .hilo::after{left:50%;right:auto;transform:translateX(-50%)}
+  .hc .hilo::before{top:0}.hc .hilo::after{top:auto;bottom:0}
+  .hc .duo-txt{grid-template-columns:1fr;gap:12px}
+  .hc .duo-txt p:last-child{text-align:left;justify-self:start}
   .hc .pill{font-size:19px}
   .hc .lista li.fuerte{font-size:19px}
   .hc .cierre .w{padding-top:72px;padding-bottom:72px}
@@ -136,9 +149,16 @@
         <h1 class="h1">HoniClub</h1>
         <p class="lema">Recomendad Honimunn.<br>Ganáis los dos.</p>
       </div>
-      <div class="duo">
-        <div><span class="pill-g">Vosotros</span><p>Sumáis saldo para vuestro viaje.</p></div>
-        <div><span class="pill-g">Vuestros amigos</span><p>Se llevan una experiencia de regalo en su destino.</p></div>
+      <div>
+        <div class="duo">
+          <span class="pill-g">Vosotros</span>
+          <span class="hilo" aria-hidden="true"></span>
+          <span class="pill-g">Vuestros amigos</span>
+        </div>
+        <div class="duo-txt">
+          <p>Vosotros sumáis saldo para vuestro viaje.</p>
+          <p>Vuestros amigos se llevan una experiencia de regalo en su destino.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -227,8 +247,7 @@
   <section class="cierre ph ph-cierre">
     <div class="w">
       <h2>HoniClub</h2>
-      <p class="lema">Cuando nos recomendáis, ganamos todos.</p>
-      <p class="nota">Vuestro código está en el <b>correo de bienvenida</b>. Compartidlo con quien os pregunte por el viaje: seguro que tenéis amigos que también se casan pronto.</p>
+      <p class="lema">Recomendad Honimunn.<br>Ganáis los dos.</p>
     </div>
   </section>
 </div>
