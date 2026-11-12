@@ -1,12 +1,21 @@
 <!-- Página selectora España / México · Honimunn · para pegar en un bloque «HTML personalizado» de WordPress -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap">
 <style>
 html,body{overflow-x:clip}
 .hm-sel{--crema:#f7f6ed;--negro:#000;--tinta:#111;--gris-claro:#a8a598;--pie-txt:#cfccc0;--borde-osc:#3a3934;--f:'Outfit',Helvetica,Arial,sans-serif}
 .hm-sel,.hm-sel *{box-sizing:border-box!important}
-.hm-sel{position:relative!important;z-index:0!important;isolation:isolate!important;margin:0 calc(50% - 50vw)!important;width:100vw!important;max-width:100vw!important;background:var(--negro)!important;color:var(--crema)!important;font-family:var(--f)!important;font-size:17px!important;line-height:1.6!important;-webkit-font-smoothing:antialiased!important;min-height:100vh!important;display:flex!important;align-items:center!important;padding:200px max(20px,4.5vw) 112px!important}
+.hm-sel{position:relative!important;z-index:0!important;isolation:isolate!important;margin:0 calc(50% - 50vw)!important;width:100vw!important;max-width:100vw!important;background:var(--negro)!important;color:var(--crema)!important;font-family:var(--f)!important;font-size:17px!important;line-height:1.6!important;-webkit-font-smoothing:antialiased!important;padding:200px max(20px,4.5vw) 112px!important}
 .hm-sel .wrap{max-width:980px!important;margin:0 auto!important;width:100%!important;text-align:center!important}
-.hm-sel .pill{display:inline-block!important;border:1px solid var(--crema)!important;border-radius:30px!important;padding:7px 16px!important;font-size:12px!important;font-weight:500!important;letter-spacing:2px!important;text-transform:uppercase!important;margin:0 0 28px!important}
+.hm-sel .banner{display:block!important;width:100%!important;height:auto!important;border-radius:24px!important;margin:0 0 40px!important}
+.hm-sel .pill{display:inline-block!important;border:1px solid var(--crema)!important;border-radius:30px!important;padding:7px 16px!important;font-size:12px!important;font-weight:500!important;letter-spacing:2px!important;text-transform:uppercase!important;margin:0 0 20px!important}
+.hm-sel .oferta{margin:0 auto 22px!important;max-width:620px!important;font-size:19px!important;color:var(--pie-txt)!important}
+.hm-sel .oferta strong{color:var(--crema)!important;font-weight:600!important}
+.hm-sel .cuenta-tit{font-size:12px!important;font-weight:500!important;letter-spacing:2px!important;text-transform:uppercase!important;color:var(--gris-claro)!important;margin:0 0 10px!important}
+.hm-sel .cuenta{display:flex!important;justify-content:center!important;flex-wrap:wrap!important;gap:10px!important}
+.hm-sel .cuenta div{width:84px!important;border:1px solid var(--borde-osc)!important;border-radius:14px!important;padding:14px 0 12px!important;text-align:center!important}
+.hm-sel .cuenta b{display:block!important;font-size:36px!important;line-height:1!important;font-weight:300!important;font-variant-numeric:tabular-nums!important}
+.hm-sel .cuenta span{display:block!important;margin-top:6px!important;font-size:11px!important;letter-spacing:1.5px!important;text-transform:uppercase!important;color:var(--gris-claro)!important}
+.hm-sel .separador{border:0!important;border-top:1px solid var(--borde-osc)!important;margin:64px auto 56px!important;max-width:980px!important}
 .hm-sel h1{margin:0 0 18px!important;font-family:var(--f)!important;font-size:clamp(40px,6vw,72px)!important;line-height:1.05!important;letter-spacing:-2px!important;font-weight:300!important;color:inherit!important;text-wrap:balance!important}
 .hm-sel h1 strong{font-weight:600!important}
 .hm-sel .sub{margin:0 auto 48px!important;max-width:560px!important;font-size:19px!important;color:var(--pie-txt)!important}
@@ -22,27 +31,46 @@ html,body{overflow-x:clip}
 .hm-sel .pais:hover .ir::after{transform:translateX(4px)!important}
 .hm-sel .nota{margin:32px 0 0!important;font-size:13px!important;color:var(--gris-claro)!important}
 @media (max-width:600px){
-.hm-sel{padding:150px 20px 64px!important;min-height:0!important}
+.hm-sel{padding:150px 20px 64px!important}
+.hm-sel .banner{border-radius:16px!important;margin-bottom:28px!important}
 .hm-sel .pais{padding:24px!important}
 .hm-sel .nombre{font-size:26px!important}
 .hm-sel .pill{font-size:10px!important;letter-spacing:1px!important;padding:6px 12px!important}
+.hm-sel .oferta{font-size:17px!important}
+.hm-sel .cuenta div{width:70px!important}
+.hm-sel .cuenta b{font-size:30px!important}
+.hm-sel .separador{margin:48px auto 40px!important}
 }
 /* Ocultar el título automático de la página de WordPress */
 .page-title,.entry-title,.page-header,.entry-header,.m-page-title,.o-page-title,.l-page-title{display:none!important}
 </style>
 <div class="hm-sel">
   <div class="wrap">
+    <!-- ============ BANNER Y CUENTA ATRÁS ============ -->
+    <img class="banner" id="sel-banner" src="https://honimunn.com/wp-content/uploads/2026/11/Bunner-EA_Espana-2-scaled.png" alt="Early Access Honimunn" onerror="this.remove()">
     <span class="pill" id="sel-campana">Early Access · hasta el 23 de noviembre</span>
+    <p class="oferta" id="sel-oferta">Hasta <strong>1.000 € de descuento</strong> en vuestra luna de miel. Bloqueadlo con un depósito 100 % reembolsable.</p>
+    <div class="cuenta-tit" id="sel-cuenta-tit">El Early Access termina en</div>
+    <div class="cuenta">
+      <div><b id="sel-d">00</b><span>días</span></div>
+      <div><b id="sel-h">00</b><span>horas</span></div>
+      <div><b id="sel-m">00</b><span>min</span></div>
+      <div><b id="sel-s">00</b><span>seg</span></div>
+    </div>
+
+    <hr class="separador">
+
+    <!-- ============ ELEGIR PAÍS ============ -->
     <h1>¿Desde dónde <strong>viajáis</strong>?</h1>
     <p class="sub">Os llevamos a la oferta de vuestro país, con los precios en vuestra moneda.</p>
     <div class="paises" id="sel-paises">
-      <a class="pais" id="sel-es" href="https://honimunn.com/earlyaccess">
+      <a class="pais" id="sel-es" href="https://honimunn.com/earlyaccess/">
         <span class="bandera" aria-hidden="true">🇪🇸</span>
         <span class="nombre">España</span>
         <span class="moneda">Precios en euros</span>
         <span class="ir">Ver la oferta</span>
       </a>
-      <a class="pais" id="sel-mx" href="https://honimunn.com.mx/earlyaccess">
+      <a class="pais" id="sel-mx" href="https://honimunn.com.mx/earlyaccess/">
         <span class="bandera" aria-hidden="true">🇲🇽</span>
         <span class="nombre">México</span>
         <span class="moneda">Precios en pesos mexicanos</span>
@@ -58,29 +86,69 @@ html,body{overflow-x:clip}
    AJUSTES (lo único que normalmente hay que tocar)
    ===================================================================== */
 var ENLACES = {
-  es: { earlyaccess: "https://honimunn.com/earlyaccess",    blackfriday: "https://honimunn.com/blackfriday" },
-  mx: { earlyaccess: "https://honimunn.com.mx/earlyaccess", blackfriday: "https://honimunn.com.mx/blackfriday" }
+  es: { earlyaccess: "https://honimunn.com/earlyaccess/",    blackfriday: "https://honimunn.com/blackfriday/" },
+  mx: { earlyaccess: "https://honimunn.com.mx/earlyaccess/", blackfriday: "https://honimunn.com.mx/blackfriday/" }
 };
-// Momento en que cada país pasa del Early Access al Black Friday (hora local de cada país)
-var CAMBIO = { es: "2026-11-24T00:00:00+01:00", mx: "2026-11-24T00:00:00-06:00" };
+// Banner de arriba. Si dejáis uno vacío (""), se usa el de España.
+var BANNERS = {
+  es: { earlyaccess: "https://honimunn.com/wp-content/uploads/2026/11/Bunner-EA_Espana-2-scaled.png", blackfriday: "" },
+  mx: { earlyaccess: "", blackfriday: "" }
+};
+// Frase de la oferta según país y campaña
+var OFERTA = {
+  es: { earlyaccess: "Hasta <strong>1.000 € de descuento</strong> en vuestra luna de miel. Bloqueadlo con un depósito 100 % reembolsable.",
+        blackfriday: "Hasta <strong>750 € de descuento</strong> en vuestra luna de miel. Bloqueadlo con un depósito 100 % reembolsable." },
+  mx: { earlyaccess: "Hasta <strong>20,000 MXN de descuento</strong> en vuestra luna de miel. Bloqueadlo con un depósito 100 % reembolsable.",
+        blackfriday: "Hasta <strong>15,000 MXN de descuento</strong> en vuestra luna de miel. Bloqueadlo con un depósito 100 % reembolsable." }
+};
+// Fechas de cada campaña (hora local de cada país)
+var FECHAS = {
+  es: { cambio: "2026-11-24T00:00:00+01:00", finEA: "2026-11-23T23:59:59+01:00", finBF: "2026-11-30T23:59:59+01:00" },
+  mx: { cambio: "2026-11-24T00:00:00-06:00", finEA: "2026-11-23T23:59:59-06:00", finBF: "2026-11-30T23:59:59-06:00" }
+};
 
 /* --- A partir de aquí no hace falta tocar nada --- */
 (function(){
   var ahora = Date.now();
   var extra = location.search || "";   // Conserva los utm_ que pongáis en el enlace de redes
+  function fase(p){ return Date.now() < new Date(FECHAS[p].cambio).getTime() ? "earlyaccess" : "blackfriday"; }
+
+  // Enlaces de cada país a su campaña activa
   ["es","mx"].forEach(function(p){
-    var fase = ahora < new Date(CAMBIO[p]).getTime() ? "earlyaccess" : "blackfriday";
-    document.getElementById("sel-" + p).href = ENLACES[p][fase] + extra;
+    document.getElementById("sel-" + p).href = ENLACES[p][fase(p)] + extra;
   });
+
+  // País detectado por la hora del móvil
   var zona = "";
   try { zona = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch(e) {}
-  var esMx = /^America\//.test(zona);
-  var detectado = document.getElementById(esMx ? "sel-mx" : "sel-es");
+  var pais = /^America\//.test(zona) ? "mx" : "es";
+  var detectado = document.getElementById("sel-" + pais);
   detectado.classList.add("detectado");
   detectado.parentNode.insertBefore(detectado, detectado.parentNode.firstChild);
-  var faseTitulo = ahora < new Date(CAMBIO[esMx ? "mx" : "es"]).getTime();
-  document.getElementById("sel-campana").textContent = faseTitulo
+
+  // Banner, etiqueta y frase según país y campaña
+  var f = fase(pais);
+  var banner = document.getElementById("sel-banner");
+  var src = BANNERS[pais][f] || BANNERS.es[f];
+  if (banner) { if (src) { banner.src = src; } else { banner.remove(); } }
+  var nombre = f === "earlyaccess" ? "Early Access" : "Black Friday";
+  document.getElementById("sel-campana").textContent = f === "earlyaccess"
     ? "Early Access · hasta el 23 de noviembre"
     : "Black Friday · hasta el 30 de noviembre";
+  document.getElementById("sel-oferta").innerHTML = OFERTA[pais][f];
+
+  // Cuenta atrás hasta el final de la campaña activa
+  var fin = new Date(f === "earlyaccess" ? FECHAS[pais].finEA : FECHAS[pais].finBF).getTime();
+  var tit = document.getElementById("sel-cuenta-tit");
+  function dos(n){ return (n < 10 ? "0" : "") + n; }
+  function tic(){
+    var s = Math.max(0, Math.floor((fin - Date.now()) / 1000));
+    tit.textContent = s > 0 ? "El " + nombre + " termina en" : "El " + nombre + " ha terminado";
+    document.getElementById("sel-d").textContent = dos(Math.floor(s / 86400));
+    document.getElementById("sel-h").textContent = dos(Math.floor(s % 86400 / 3600));
+    document.getElementById("sel-m").textContent = dos(Math.floor(s % 3600 / 60));
+    document.getElementById("sel-s").textContent = dos(s % 60);
+  }
+  tic(); setInterval(tic, 1000);
 })();
 </script>
