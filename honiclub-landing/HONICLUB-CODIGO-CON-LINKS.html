@@ -10,6 +10,8 @@
   --foto-cierre:url("https://honimunn.com/wp-content/uploads/2026/11/Group-98-scaled.png");
 }
 /* ================================ */
+/* Oculta el título automático de WordPress solo en esta página */
+.page-header,.entry-header,.entry-title,.page-title,h1.entry-title,.elementor-page-title{display:none!important}
 /* HoniClub para Elementor. Todo vive dentro de .hc y las fotos van como fondo, así el tema de la web no las toca. */
 .hc{
   --crema:#f7f5ec;--crema-2:#efece0;--tinta:#111110;--texto:#45443e;--suave:#77756b;--linea:#d6d1c0;--blanco:#ffffff;
@@ -42,7 +44,7 @@
 /* Portada */
 .hc .hero{position:relative;color:#fff}
 .hc .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,9,7,.55) 0%,rgba(10,9,7,.2) 45%,rgba(10,9,7,.78) 100%)}
-.hc .hero .w{position:relative;z-index:1;min-height:520px;display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding-top:72px;padding-bottom:40px}
+.hc .hero .w{position:relative;z-index:1;min-height:max(720px,88vh);display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding-top:150px;padding-bottom:56px}
 .hc .h1{font-size:clamp(48px,7vw,88px);font-weight:800;line-height:.95;letter-spacing:-.04em;color:#fff!important}
 .hc .lema{margin-top:10px;font-size:clamp(22px,2.8vw,34px);line-height:1.12;letter-spacing:-.02em;color:#fff!important;font-weight:400}
 .hc .duo{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px}
@@ -73,7 +75,7 @@
 
 /* Amigos */
 .hc .amigos{background:var(--tinta);color:var(--crema)}
-.hc .amigos .w{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end;padding-top:80px;padding-bottom:80px}
+.hc .amigos .w{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;min-height:620px;padding-top:140px;padding-bottom:140px}
 .hc .amigos h2{margin-top:20px;font-size:clamp(28px,3.4vw,42px);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:var(--crema)!important}
 .hc .amigos .item{border-top:1px solid rgba(247,245,236,.22);padding-top:16px}
 .hc .amigos .item + .item{margin-top:20px}
@@ -116,9 +118,10 @@
   .hc .split .ph{min-height:0;aspect-ratio:4/5}
   .hc .split .txt{padding:48px 24px}
   .hc .amigos .w,.hc .como .w,.hc .faq .w{gap:32px;padding-top:56px;padding-bottom:56px}
+  .hc .amigos .w{min-height:0;padding-top:96px;padding-bottom:96px}
 }
 @media (max-width:560px){
-  .hc .hero .w{min-height:480px;padding-top:56px}
+  .hc .hero .w{min-height:600px;padding-top:120px}
   .hc .duo{grid-template-columns:1fr;gap:18px}
   .hc .pill{font-size:19px}
   .hc .lista li.fuerte{font-size:19px}
