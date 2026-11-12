@@ -1,0 +1,246 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+<style>
+/* HoniClub para Elementor. Todo vive dentro de .hc y las fotos van como fondos incrustados, así el tema de la web no las toca. */
+.hc{
+  --crema:#f7f5ec;--crema-2:#efece0;--tinta:#111110;--texto:#45443e;--suave:#77756b;--linea:#d6d1c0;--blanco:#ffffff;
+  --degradado:linear-gradient(90deg,#a6e57f,#f4f07c);
+  --f:'Outfit',Helvetica,Arial,sans-serif;
+  background:var(--crema)!important;color:var(--tinta)!important;font-family:var(--f)!important;
+  font-size:16px;line-height:1.55;font-weight:400;text-align:left;width:100%;overflow:hidden;-webkit-font-smoothing:antialiased
+}
+.hc,.hc *,.hc *::before,.hc *::after{box-sizing:border-box}
+.hc div,.hc p,.hc span,.hc h1,.hc h2,.hc h3,.hc ul,.hc ol,.hc li,.hc section,.hc details,.hc summary,.hc button,.hc output,.hc b{
+  font-family:var(--f)!important;margin:0;padding:0;border:0;text-transform:none;letter-spacing:normal;text-shadow:none;box-shadow:none
+}
+.hc h1,.hc h2,.hc h3{color:inherit!important;font-style:normal;text-wrap:balance}
+.hc ul,.hc ol,.hc li{list-style:none!important}
+.hc li::marker{content:""}
+.hc .w{max-width:1120px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+/* Fotos como fondo */
+.hc .ph{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#2a2620}
+.hc .ph-portada{background-image:url(__PORTADA__);background-position:62% 40%}
+.hc .ph-atardecer{background-image:url(__ATARDECER__)}
+.hc .ph-manos{background-image:url(__MANOS__)}
+.hc .ph-bambu{background-image:url(__BAMBU__)}
+.hc .ph-mercado{background-image:url(__MERCADO__)}
+.hc .ph-surf{background-image:url(__SURF__);background-position:center 60%}
+
+/* Etiquetas */
+.hc .pill{display:inline-block;background:var(--tinta);color:var(--crema)!important;font-weight:700;font-size:22px;line-height:1;padding:12px 20px 13px;border-radius:999px;letter-spacing:-.01em}
+.hc .pill-g{display:inline-block;background:var(--degradado);color:var(--tinta)!important;font-weight:600;font-size:16px;line-height:1;padding:9px 16px 10px;border-radius:999px}
+
+/* Portada */
+.hc .hero{position:relative;color:#fff}
+.hc .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,9,7,.55) 0%,rgba(10,9,7,.2) 45%,rgba(10,9,7,.78) 100%)}
+.hc .hero .w{position:relative;z-index:1;min-height:520px;display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding-top:72px;padding-bottom:40px}
+.hc .h1{font-size:clamp(48px,7vw,88px);font-weight:800;line-height:.95;letter-spacing:-.04em;color:#fff!important}
+.hc .lema{margin-top:10px;font-size:clamp(22px,2.8vw,34px);line-height:1.12;letter-spacing:-.02em;color:#fff!important;font-weight:400}
+.hc .duo{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px}
+.hc .duo p{margin-top:12px;font-size:17px;line-height:1.35;color:#fff!important}
+
+/* Bloques mitad foto, mitad texto */
+.hc .split{display:grid;grid-template-columns:1fr 1fr;background:var(--crema)}
+.hc .split .ph{min-height:440px}
+.hc .split .txt{padding:64px 48px;display:flex;flex-direction:column;gap:28px;justify-content:center;min-width:0}
+.hc .lista{border-top:1px solid var(--linea)}
+.hc .lista li{padding:16px 0;border-bottom:1px solid var(--linea);font-size:18px;line-height:1.35;color:var(--tinta)}
+.hc .lista li.fuerte{font-weight:700;font-size:21px;letter-spacing:-.01em}
+.hc .lista h3{font-size:19px;font-weight:700;line-height:1.25;margin-bottom:4px;letter-spacing:-.01em}
+.hc .lista p{font-size:16px;color:var(--texto)!important;line-height:1.45}
+
+/* Calculadora */
+.hc .calc{background:#fff;border-radius:18px;padding:20px;display:grid;gap:12px}
+.hc .calc-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.hc .calc-label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)!important}
+.hc .step{display:flex;align-items:center;gap:6px;background:var(--crema);border-radius:999px;padding:4px}
+.hc .step button{width:34px!important;height:34px!important;min-width:0!important;min-height:0!important;border-radius:50%!important;background:var(--tinta)!important;color:var(--crema)!important;font-size:19px!important;line-height:1!important;font-weight:400!important;display:grid!important;place-items:center;cursor:pointer;padding:0!important}
+.hc .step button:disabled{opacity:.25;cursor:default}
+.hc .step output{min-width:92px;text-align:center;font-weight:600;font-size:15px;color:var(--tinta)}
+.hc .res{font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums;color:var(--tinta)}
+.hc .res small{display:block;font-size:14px;font-weight:400;letter-spacing:0;color:var(--texto);margin-top:6px;line-height:1.4}
+.hc .barra{height:8px;border-radius:999px;background:var(--crema-2);overflow:hidden}
+.hc .barra i{display:block;height:100%;width:5%;background:var(--degradado);border-radius:999px;transition:width .35s ease}
+
+/* Amigos */
+.hc .amigos{background:var(--tinta);color:var(--crema)}
+.hc .amigos .w{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end;padding-top:80px;padding-bottom:80px}
+.hc .amigos h2{margin-top:20px;font-size:clamp(28px,3.4vw,42px);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:var(--crema)!important}
+.hc .amigos .item{border-top:1px solid rgba(247,245,236,.22);padding-top:16px}
+.hc .amigos .item + .item{margin-top:20px}
+.hc .amigos h3{font-size:18px;font-weight:600;color:var(--crema)!important;margin-bottom:4px}
+.hc .amigos p{font-size:16px;color:#c9c6b8!important;line-height:1.45}
+
+/* Cómo funciona */
+.hc .como .w{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-top:80px;padding-bottom:80px}
+.hc .como h3{font-size:22px;font-weight:700;letter-spacing:-.02em;margin-top:32px;padding-bottom:14px;border-bottom:1px solid var(--linea)}
+.hc .pasos{display:grid;gap:18px;margin-top:20px;counter-reset:hcp}
+.hc .pasos li{counter-increment:hcp;display:grid;grid-template-columns:28px 1fr;font-size:18px;line-height:1.4;color:var(--tinta)}
+.hc .pasos li::before{content:counter(hcp) ".";font-weight:800}
+.hc .mosaico{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:10px}
+.hc .mosaico .ph:first-child{grid-row:span 2}
+
+/* Preguntas */
+.hc .faq{background:var(--crema-2)}
+.hc .faq .w{display:grid;grid-template-columns:1fr 1.7fr;gap:56px;align-items:start;padding-top:80px;padding-bottom:80px}
+.hc .faq-intro p{margin-top:18px;color:var(--texto)!important;font-size:16px;max-width:32ch}
+.hc details{border-bottom:1px solid var(--linea)!important;background:none}
+.hc details:first-of-type{border-top:1px solid var(--linea)!important}
+.hc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;font-size:18px;font-weight:600;color:var(--tinta)!important;background:none}
+.hc summary::-webkit-details-marker{display:none}
+.hc summary::marker{content:""}
+.hc .mas{flex:0 0 auto;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--tinta)!important;display:grid;place-items:center;font-size:17px;font-weight:400;line-height:1;transition:transform .25s ease,background .25s ease}
+.hc details[open] .mas{transform:rotate(45deg);background:var(--degradado);border-color:transparent!important}
+.hc details p{padding:0 0 18px;color:var(--texto)!important;font-size:16px;max-width:60ch}
+
+/* Cierre */
+.hc .cierre{position:relative;color:#fff}
+.hc .cierre::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,9,7,.85) 0%,rgba(10,9,7,.5) 60%,rgba(10,9,7,.2) 100%)}
+.hc .cierre .w{position:relative;z-index:1;padding-top:96px;padding-bottom:96px}
+.hc .cierre h2{font-size:clamp(40px,5.5vw,68px);font-weight:800;letter-spacing:-.04em;line-height:.95;color:#fff!important}
+.hc .cierre .lema{max-width:18ch}
+.hc .cierre .nota{margin-top:28px;font-size:17px;max-width:46ch;color:#ece9de!important}
+.hc .cierre .nota b{font-weight:600;color:#fff!important}
+
+/* Móvil y tablet */
+@media (max-width:860px){
+  .hc .split,.hc .amigos .w,.hc .como .w,.hc .faq .w{grid-template-columns:1fr}
+  .hc .split .ph{min-height:0;aspect-ratio:4/3}
+  .hc .split .txt{padding:48px 24px}
+  .hc .amigos .w,.hc .como .w,.hc .faq .w{gap:32px;padding-top:56px;padding-bottom:56px}
+  .hc .mosaico{grid-template-rows:150px 150px}
+}
+@media (max-width:560px){
+  .hc .hero .w{min-height:480px;padding-top:56px}
+  .hc .duo{grid-template-columns:1fr;gap:18px}
+  .hc .pill{font-size:19px}
+  .hc .lista li.fuerte{font-size:19px}
+  .hc .cierre .w{padding-top:72px;padding-bottom:72px}
+}
+</style>
+
+<div class="hc">
+  <section class="hero ph ph-portada" role="img" aria-label="Una pareja se hace un selfi de noche mientras él come un helado">
+    <div class="w">
+      <div>
+        <h1 class="h1">HoniClub</h1>
+        <p class="lema">Recomendad Honimunn.<br>Ganáis los dos.</p>
+      </div>
+      <div class="duo">
+        <div><span class="pill-g">Vosotros</span><p>Sumáis saldo para vuestro viaje.</p></div>
+        <div><span class="pill-g">Vuestros amigos</span><p>Se llevan una experiencia de regalo en su destino.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="ph ph-atardecer" role="img" aria-label="Atardecer sobre un lago con volcanes, visto desde una terraza"></div>
+    <div class="txt">
+      <h2><span class="pill">¿Qué os lleváis?</span></h2>
+      <ul class="lista">
+        <li class="fuerte">Entre 100 y 300 € de saldo por pareja, según el tipo de viaje y el destino que elijan.</li>
+        <li>Cada pareja que reserve con vuestro código suma.</li>
+        <li>Podéis recomendar a tantas como queráis.</li>
+      </ul>
+      <div class="calc" aria-live="polite">
+        <div class="calc-top">
+          <span class="calc-label" id="hc-calc-lbl">Haced la cuenta</span>
+          <div class="step" role="group" aria-labelledby="hc-calc-lbl">
+            <button type="button" id="hc-menos" aria-label="Una pareja menos">−</button>
+            <output id="hc-num">1 pareja</output>
+            <button type="button" id="hc-mas" aria-label="Una pareja más">+</button>
+          </div>
+        </div>
+        <div class="res" id="hc-res">de 100 a 300 €<small>de saldo para vuestro viaje, según el destino y el tipo de viaje que elijan.</small></div>
+        <div class="barra" aria-hidden="true"><i id="hc-barra"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="amigos">
+    <div class="w">
+      <div>
+        <span class="pill-g">Vuestros amigos</span>
+        <h2>Ellos también se llevan algo: una experiencia de regalo en su destino.</h2>
+      </div>
+      <div>
+        <div class="item"><h3>Ya incluida en su viaje</h3><p>Su Travel Designer la añade a la reserva en cuanto confirman. Solo tienen que decirnos vuestro código.</p></div>
+        <div class="item"><h3>Y con su propio código</h3><p>Al reservar, también entran en HoniClub. Si recomiendan a otras parejas, empiezan a sumar saldo igual que vosotros.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="como">
+    <div class="w">
+      <div>
+        <h2><span class="pill">¿Cómo funciona?</span></h2>
+        <h3>Todo empieza con vuestro código</h3>
+        <ol class="pasos">
+          <li><span>Al confirmar vuestro viaje, recibís vuestro código HoniClub en el correo de bienvenida.</span></li>
+          <li><span>Compartidlo con vuestros amigos. Solo tienen que mencionarlo cuando nos escriban.</span></li>
+          <li><span>Cuando firmen el contrato y confirmen su viaje, sumáis saldo y añadimos la experiencia de regalo a su reserva.</span></li>
+        </ol>
+      </div>
+      <div class="mosaico" aria-hidden="true">
+        <div class="ph ph-bambu"></div>
+        <div class="ph ph-manos"></div>
+        <div class="ph ph-mercado"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="ph ph-surf" role="img" aria-label="Una mujer con una tabla de surf entre las dunas"></div>
+    <div class="txt">
+      <h2><span class="pill">¿Cómo usar el saldo?</span></h2>
+      <ul class="lista">
+        <li><h3>Tenéis 1 año para usarlo</h3><p>Desde la emisión de vuestro último bono. El saldo no se canjea por dinero.</p></li>
+        <li><h3>Para este viaje o para el próximo</h3><p>Pasadle el código del bono a vuestro Travel Designer. Podéis descontar todo el saldo acumulado de una vez, hasta cubrir lo que os quede por pagar.</p></li>
+        <li><h3>¿Y si la pareja recomendada cancela?</h3><p>El saldo de esa reserva que quede sin usar se anula. Si ya habéis usado parte o todo, el importe aplicado se incluye en los gastos de cancelación de esa pareja.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="w">
+      <div class="faq-intro">
+        <h2><span class="pill">Preguntas</span></h2>
+        <p>Lo que más nos preguntáis. Si os queda alguna duda, vuestro Travel Designer os lo cuenta con calma.</p>
+      </div>
+      <div>
+        <details open><summary>¿Dónde está nuestro código?<span class="mas" aria-hidden="true">+</span></summary><p>En el correo de bienvenida que os llega al confirmar el viaje. Si no lo encontráis, pedídselo a vuestro Travel Designer por WhatsApp.</p></details>
+        <details><summary>¿Hay un máximo de parejas?<span class="mas" aria-hidden="true">+</span></summary><p>No. Cada pareja que reserve con vuestro código suma entre 100 y 300 € de saldo, según el destino y el tipo de viaje que elijan.</p></details>
+        <details><summary>¿Cuándo se suma el saldo?<span class="mas" aria-hidden="true">+</span></summary><p>Cuando la pareja recomendada firma el contrato y confirma su viaje. En ese momento os enviamos un correo con vuestro bono actualizado.</p></details>
+        <details><summary>¿Cuánto dura el saldo?<span class="mas" aria-hidden="true">+</span></summary><p>Un año desde la emisión de vuestro último bono. Cada vez que sumáis saldo, el plazo vuelve a empezar.</p></details>
+        <details><summary>¿Se puede cambiar por dinero?<span class="mas" aria-hidden="true">+</span></summary><p>No. El saldo se descuenta de lo que os quede por pagar de vuestro viaje con Honimunn.</p></details>
+        <details><summary>¿Qué tienen que hacer nuestros amigos?<span class="mas" aria-hidden="true">+</span></summary><p>Decirnos vuestro código cuando nos escriban. El resto lo hacemos nosotros: diseñamos su viaje y, al confirmarlo, añadimos su experiencia de regalo.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cierre ph ph-portada">
+    <div class="w">
+      <h2>HoniClub</h2>
+      <p class="lema">Cuando nos recomendáis, ganamos todos.</p>
+      <p class="nota">Vuestro código está en el <b>correo de bienvenida</b>. Compartidlo con quien os pregunte por el viaje: seguro que tenéis amigos que también se casan pronto.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  var n=1,MAX=20,d=document;
+  var num=d.getElementById('hc-num'),res=d.getElementById('hc-res'),barra=d.getElementById('hc-barra'),menos=d.getElementById('hc-menos'),mas=d.getElementById('hc-mas');
+  if(!num)return;
+  var fmt=new Intl.NumberFormat('es-ES');
+  function pinta(){
+    num.textContent=n+(n===1?' pareja':' parejas');
+    res.firstChild.nodeValue='de '+fmt.format(n*100)+' a '+fmt.format(n*300)+' €';
+    barra.style.width=Math.max(5,n/MAX*100)+'%';
+    menos.disabled=n<=1;mas.disabled=n>=MAX;
+  }
+  menos.addEventListener('click',function(){if(n>1){n--;pinta();}});
+  mas.addEventListener('click',function(){if(n<MAX){n++;pinta();}});
+  pinta();
+})();
+</script>
