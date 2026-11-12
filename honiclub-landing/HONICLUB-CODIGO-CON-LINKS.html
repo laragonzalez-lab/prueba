@@ -3,12 +3,11 @@
 /* ====== LINKS DE LAS FOTOS ======
    Si al subir las fotos a Medios el link es distinto, pega aquí el link correcto entre las comillas. */
 .hc{
-  --foto-portada:url("/wp-content/uploads/2026/11/honiclub-portada.jpg");
-  --foto-atardecer:url("/wp-content/uploads/2026/11/honiclub-atardecer.jpg");
-  --foto-manos:url("/wp-content/uploads/2026/11/honiclub-manos.jpg");
-  --foto-bambu:url("/wp-content/uploads/2026/11/honiclub-bambu.jpg");
-  --foto-mercado:url("/wp-content/uploads/2026/11/honiclub-mercado.jpg");
-  --foto-surf:url("/wp-content/uploads/2026/11/honiclub-surf.jpg");
+  --foto-portada:url("https://honimunn.com/wp-content/uploads/2026/11/Group-97-1-1-scaled.png");
+  --foto-atardecer:url("https://honimunn.com/wp-content/uploads/2026/11/Image-6-scaled.png");
+  --foto-collage:url("https://honimunn.com/wp-content/uploads/2026/11/Group-5-1-scaled.png");
+  --foto-saldo:url("https://honimunn.com/wp-content/uploads/2026/11/Group-6-scaled.png");
+  --foto-cierre:url("https://honimunn.com/wp-content/uploads/2026/11/Group-98-scaled.png");
 }
 /* ================================ */
 /* HoniClub para Elementor. Todo vive dentro de .hc y las fotos van como fondo, así el tema de la web no las toca. */
@@ -32,10 +31,9 @@
 .hc .ph{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#2a2620}
 .hc .ph-portada{background-image:var(--foto-portada);background-position:62% 40%}
 .hc .ph-atardecer{background-image:var(--foto-atardecer)}
-.hc .ph-manos{background-image:var(--foto-manos)}
-.hc .ph-bambu{background-image:var(--foto-bambu)}
-.hc .ph-mercado{background-image:var(--foto-mercado)}
-.hc .ph-surf{background-image:var(--foto-surf);background-position:center 60%}
+.hc .ph-collage{background-image:var(--foto-collage);background-size:contain;background-color:transparent}
+.hc .ph-saldo{background-image:var(--foto-saldo)}
+.hc .ph-cierre{background-image:var(--foto-cierre);background-position:62% 40%}
 
 /* Etiquetas */
 .hc .pill{display:inline-block;background:var(--tinta);color:var(--crema)!important;font-weight:700;font-size:22px;line-height:1;padding:12px 20px 13px;border-radius:999px;letter-spacing:-.01em}
@@ -88,8 +86,7 @@
 .hc .pasos{display:grid;gap:18px;margin-top:20px;counter-reset:hcp}
 .hc .pasos li{counter-increment:hcp;display:grid;grid-template-columns:28px 1fr;font-size:18px;line-height:1.4;color:var(--tinta)}
 .hc .pasos li::before{content:counter(hcp) ".";font-weight:800}
-.hc .mosaico{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:10px}
-.hc .mosaico .ph:first-child{grid-row:span 2}
+.hc .collage{width:100%;aspect-ratio:1/1;max-width:520px;justify-self:center}
 
 /* Preguntas */
 .hc .faq{background:var(--crema-2)}
@@ -119,7 +116,6 @@
   .hc .split .ph{min-height:0;aspect-ratio:4/3}
   .hc .split .txt{padding:48px 24px}
   .hc .amigos .w,.hc .como .w,.hc .faq .w{gap:32px;padding-top:56px;padding-bottom:56px}
-  .hc .mosaico{grid-template-rows:150px 150px}
 }
 @media (max-width:560px){
   .hc .hero .w{min-height:480px;padding-top:56px}
@@ -192,16 +188,12 @@
           <li><span>Cuando firmen el contrato y confirmen su viaje, sumáis saldo y añadimos la experiencia de regalo a su reserva.</span></li>
         </ol>
       </div>
-      <div class="mosaico" aria-hidden="true">
-        <div class="ph ph-bambu"></div>
-        <div class="ph ph-manos"></div>
-        <div class="ph ph-mercado"></div>
-      </div>
+      <div class="ph ph-collage collage" aria-hidden="true"></div>
     </div>
   </section>
 
   <section class="split">
-    <div class="ph ph-surf" role="img" aria-label="Una mujer con una tabla de surf entre las dunas"></div>
+    <div class="ph ph-saldo" role="img" aria-label="Fotos de viaje: un chico bajo el cielo y una mujer con una tabla de surf"></div>
     <div class="txt">
       <h2><span class="pill">¿Cómo usar el saldo?</span></h2>
       <ul class="lista">
@@ -229,7 +221,7 @@
     </div>
   </section>
 
-  <section class="cierre ph ph-portada">
+  <section class="cierre ph ph-cierre">
     <div class="w">
       <h2>HoniClub</h2>
       <p class="lema">Cuando nos recomendáis, ganamos todos.</p>
