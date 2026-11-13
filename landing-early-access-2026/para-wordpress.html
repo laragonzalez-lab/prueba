@@ -88,8 +88,8 @@ html,body{overflow-x:clip}
 .hm-ea details{border-bottom:1px solid var(--linea)!important}
 .hm-ea summary{list-style:none!important;cursor:pointer!important;display:flex!important;justify-content:space-between!important;align-items:center!important;gap:16px!important;min-height:64px!important;padding:18px 0!important;font-size:19px!important;font-weight:500!important}
 .hm-ea summary::-webkit-details-marker{display:none!important}
-.hm-ea summary::after{content:"+"!important;font-size:26px!important;font-weight:300!important;color:var(--gris)!important}
-.hm-ea details[open] summary::after{content:"\2212"!important}
+.hm-ea summary::after{content:"+"!important;font-size:26px!important;font-weight:300!important;color:var(--gris)!important;transition:transform .2s!important}
+.hm-ea details[open] summary::after{transform:rotate(45deg)!important}
 .hm-ea details p{margin:0 0 22px!important;color:var(--texto)!important}
 .hm-ea .volver{text-align:center!important;padding-bottom:40px!important}
 .hm-ea .cond{padding-bottom:56px!important}

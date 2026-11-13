@@ -27,8 +27,8 @@ html,body{overflow-x:clip}
 .hm-sel .nombre{font-family:var(--f)!important;font-size:30px!important;font-weight:500!important;line-height:1.2!important}
 .hm-sel .moneda{font-size:15px!important;opacity:.75!important}
 .hm-sel .ir{margin-top:14px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;font-weight:600!important;font-size:16px!important}
-.hm-sel .ir::after{content:"\2192"!important;transition:transform .15s!important}
-.hm-sel .pais:hover .ir::after{transform:translateX(4px)!important}
+.hm-sel .flecha{display:inline-block!important;transition:transform .15s!important}
+.hm-sel .pais:hover .flecha{transform:translateX(4px)!important}
 .hm-sel .nota{margin:32px 0 0!important;font-size:13px!important;color:var(--gris-claro)!important}
 @media (max-width:600px){
 .hm-sel{padding:150px 20px 64px!important}
@@ -102,13 +102,13 @@ html,body{overflow-x:clip}
         <span class="bandera" aria-hidden="true">🇪🇸</span>
         <span class="nombre">España</span>
         <span class="moneda">Precios en euros</span>
-        <span class="ir">Ver la oferta</span>
+        <span class="ir">Ver la oferta <span class="flecha" aria-hidden="true">&rarr;</span></span>
       </a>
       <a class="pais" id="sel-mx" href="https://honimunn.com.mx/earlyaccess/">
         <span class="bandera" aria-hidden="true">🇲🇽</span>
         <span class="nombre">México</span>
         <span class="moneda">Precios en pesos mexicanos</span>
-        <span class="ir">Ver la oferta</span>
+        <span class="ir">Ver la oferta <span class="flecha" aria-hidden="true">&rarr;</span></span>
       </a>
     </div>
     <p class="nota">¿Vivís en otro país? Elegid el de la moneda en la que preferís pagar.</p>
